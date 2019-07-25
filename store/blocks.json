@@ -1,0 +1,5 @@
+{
+  "checkout-cart": {
+    "blocks": ["product-list"]
+  }
+}
