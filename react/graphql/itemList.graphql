@@ -1,0 +1,27 @@
+query itemList {
+  cart {
+    items {
+      additionalInfo {
+        brandName
+      }
+      detailUrl
+      id
+      imageUrl
+      listPrice
+      measurementUnit
+      name
+      price
+      productId
+      quantity
+      sellingPrice
+      skuName
+      variations {
+        name
+        values
+      }
+    }
+    storePreferencesData {
+      currencyCode
+    }
+  }
+}

@@ -1,5 +1,6 @@
 {
   "checkout-cart": {
+    "component": "Cart",
     "allowed": ["product-list"]
   }
 }
