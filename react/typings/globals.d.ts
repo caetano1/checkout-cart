@@ -11,14 +11,20 @@ interface Item {
   quantity: number
   sellingPrice: number
   skuName: string
-  variations: Variation[]
+  skuSpecifications: SKUSpecification[]
 }
 
 interface ItemAdditionalInfo {
   brandName: string
 }
 
-interface Variation {
+interface SKUSpecification {
+  fieldName: string
+  fieldValues: string[]
+}
+
+interface Totalizer {
+  id: string
   name: string
-  values: string[]
+  value: number
 }

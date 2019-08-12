@@ -22,6 +22,11 @@ const debouncedUpdateItems = debounce(
           },
         ],
       },
+      refetchQueries: [
+        {
+          query: ItemList.default,
+        },
+      ],
     }),
   DEBOUNCE_TIME_MS
 )
@@ -31,6 +36,8 @@ const Cart: FunctionComponent<any> = ({ ItemListQuery, UpdateItems }) => {
     cart: {
       items,
       storePreferencesData: { currencyCode },
+      totalizers,
+      value,
     },
   } = ItemListQuery
 
@@ -47,14 +54,24 @@ const Cart: FunctionComponent<any> = ({ ItemListQuery, UpdateItems }) => {
   }
 
   return (
-    <div className="pa7 fl w-two-thirds">
-      <ExtensionPoint
-        id="product-list"
-        items={curItems}
-        onQuantityChange={handleQuantityChange}
-        onRemove={handleRemove}
-        currency={currencyCode}
-      />
+    <div>
+      <div className="pa7 fl w-two-thirds">
+        <ExtensionPoint
+          id="product-list"
+          items={curItems}
+          onQuantityChange={handleQuantityChange}
+          onRemove={handleRemove}
+          currency={currencyCode}
+        />
+      </div>
+      <div className="fl w-third">
+        <ExtensionPoint
+          id="checkout-summary"
+          totalizers={totalizers}
+          total={value}
+          currency={currencyCode}
+        />
+      </div>
     </div>
   )
 }

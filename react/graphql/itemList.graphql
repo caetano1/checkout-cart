@@ -23,5 +23,11 @@ query itemList {
     storePreferencesData {
       currencyCode
     }
+    totalizers {
+      id
+      name
+      value
+    }
+    value
   }
 }
