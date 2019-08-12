@@ -31,7 +31,7 @@ const debouncedUpdateItems = debounce(
   DEBOUNCE_TIME_MS
 )
 
-const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
+const Cart: FunctionComponent<any> = ({ ItemListQuery, UpdateItems }) => {
   const {
     cart: {
       items,
@@ -52,6 +52,8 @@ const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
     setItems([...curItems.slice(0, index), ...curItems.slice(index + 1)])
     debouncedUpdateItems(UpdateItems, index, 0)
   }
+
+  const { subtotal } = parseTotalizers(totalizers)
 
   return (
     <div>
