@@ -54,8 +54,8 @@ const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
   }
 
   return (
-    <div className="">
-      <div className="fl-l w-70-l pa6-l br-l b--muted-4">
+    <div className="mw9 center flex-m ph5-m ph2-xl">
+      <div className="bn b--muted-4 flex-auto-m pt7-m br-m pr6-l pb6-l pl6-l w-70-l">
         <ExtensionPoint
           id="product-list"
           items={curItems}
@@ -64,7 +64,7 @@ const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
           currency={currencyCode}
         />
       </div>
-      <div className="fl-l w-30-l pa6-l">
+      <div className="flex-auto-m mw6-m pt7-m pr6-l pb6-l pl6-l">
         <ExtensionPoint
           id="checkout-summary"
           totalizers={totalizers}
