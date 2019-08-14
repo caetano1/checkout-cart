@@ -31,7 +31,7 @@ const debouncedUpdateItems = debounce(
   DEBOUNCE_TIME_MS
 )
 
-const Cart: FunctionComponent<any> = ({ ItemListQuery, UpdateItems }) => {
+const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
   const {
     cart: {
       items,
@@ -53,11 +53,9 @@ const Cart: FunctionComponent<any> = ({ ItemListQuery, UpdateItems }) => {
     debouncedUpdateItems(UpdateItems, index, 0)
   }
 
-  const { subtotal } = parseTotalizers(totalizers)
-
   return (
-    <div>
-      <div className="pa7 fl w-two-thirds">
+    <div className="">
+      <div className="fl-l w-70-l pa6-l br-l b--muted-4">
         <ExtensionPoint
           id="product-list"
           items={curItems}
@@ -66,7 +64,7 @@ const Cart: FunctionComponent<any> = ({ ItemListQuery, UpdateItems }) => {
           currency={currencyCode}
         />
       </div>
-      <div className="fl w-third">
+      <div className="fl-l w-30-l pa6-l">
         <ExtensionPoint
           id="checkout-summary"
           totalizers={totalizers}
