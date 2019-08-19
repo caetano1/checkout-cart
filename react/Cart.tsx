@@ -72,6 +72,7 @@ const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
       <div
         className={`${styles.summary} flex-auto-l w-100 w-30-l fr-m pl6-m pr6-m pt7-l pb6-l pb7-xl pl7-xl ml7-xl`}
       >
+        <ExtensionPoint id="shipping-calculator" />
         <ExtensionPoint
           id="checkout-summary"
           totalizers={totalizers}
