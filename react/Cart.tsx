@@ -6,8 +6,10 @@ import { branch, renderComponent } from 'recompose'
 import { Spinner } from 'vtex.styleguide'
 import { ExtensionPoint } from 'vtex.render-runtime'
 
-import * as ItemList from './graphql/itemList.graphql'
-import * as UpdateItems from './graphql/updateItems.graphql'
+import CartQuery from './graphql/cart.graphql'
+import UpdateItems from './graphql/updateItems.graphql'
+
+import styles from './styles.css'
 
 const DEBOUNCE_TIME_MS = 300
 
@@ -22,17 +24,24 @@ const debouncedUpdateItems = debounce(
           },
         ],
       },
+      refetchQueries: [
+        {
+          query: CartQuery,
+        },
+      ],
     }),
   DEBOUNCE_TIME_MS
 )
 
-const Cart: FunctionComponent<any> = ({ ItemListQuery, UpdateItems }) => {
+const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
   const {
     cart: {
       items,
       storePreferencesData: { currencyCode },
+      totalizers,
+      value,
     },
-  } = ItemListQuery
+  } = CartQuery
 
   const [curItems, setItems] = useState(items)
 
@@ -47,23 +56,34 @@ const Cart: FunctionComponent<any> = ({ ItemListQuery, UpdateItems }) => {
   }
 
   return (
-    <div className="pa7 fl w-two-thirds">
-      <ExtensionPoint
-        id="product-list"
-        items={curItems}
-        onQuantityChange={handleQuantityChange}
-        onRemove={handleRemove}
-        currency={currencyCode}
-      />
+    <div className="mw9 center flex-l ph6-l ph7-xl">
+      <div className="bn b--muted-4 flex-auto-l pt7-l br-l pr7-l pb6-l w-70-l">
+        <div className="mr7-xl">
+          <ExtensionPoint
+            id="product-list"
+            items={curItems}
+            onQuantityChange={handleQuantityChange}
+            onRemove={handleRemove}
+            currency={currencyCode}
+          />
+        </div>
+      </div>
+      <div
+        className={`${styles.summary} flex-auto-l w-100 w-30-l fr-m pl6-m pr6-m pt7-l pb6-l pb7-xl pl7-xl ml7-xl`}
+      >
+        <ExtensionPoint
+          id="checkout-summary"
+          totalizers={totalizers}
+          total={value}
+          currency={currencyCode}
+        />
+      </div>
     </div>
   )
 }
 
 export default compose(
-  graphql(ItemList.default, { name: 'ItemListQuery', options: { ssr: false } }),
-  graphql(UpdateItems.default, { name: 'UpdateItems' }),
-  branch(
-    ({ ItemListQuery }: any) => !!ItemListQuery.loading,
-    renderComponent(Spinner)
-  )
+  graphql(CartQuery, { name: 'CartQuery', options: { ssr: false } }),
+  graphql(UpdateItems, { name: 'UpdateItems' }),
+  branch(({ CartQuery }: any) => !!CartQuery.loading, renderComponent(Spinner))
 )(Cart)

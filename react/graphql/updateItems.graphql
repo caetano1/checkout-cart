@@ -15,9 +15,9 @@ mutation updateItems($orderItems: [ItemInput]) {
       quantity
       sellingPrice
       skuName
-      variations {
-        name
-        values
+      skuSpecifications {
+        fieldName
+        fieldValues
       }
     }
   }
