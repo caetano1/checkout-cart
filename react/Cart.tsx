@@ -6,8 +6,8 @@ import { branch, renderComponent } from 'recompose'
 import { Spinner } from 'vtex.styleguide'
 import { ExtensionPoint } from 'vtex.render-runtime'
 
-import * as CartQuery from './graphql/cart.graphql'
-import * as UpdateItems from './graphql/updateItems.graphql'
+import CartQuery from './graphql/cart.graphql'
+import UpdateItems from './graphql/updateItems.graphql'
 
 import styles from './styles.css'
 
@@ -26,7 +26,7 @@ const debouncedUpdateItems = debounce(
       },
       refetchQueries: [
         {
-          query: CartQuery.default,
+          query: CartQuery,
         },
       ],
     }),
@@ -68,7 +68,9 @@ const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
           />
         </div>
       </div>
-      <div className={`${styles.summary} flex-auto-l w-100 w-30-l fr-m pl6-m pr6-m pt7-l pb6-l pb7-xl pl7-xl ml7-xl`}>
+      <div
+        className={`${styles.summary} flex-auto-l w-100 w-30-l fr-m pl6-m pr6-m pt7-l pb6-l pb7-xl pl7-xl ml7-xl`}
+      >
         <ExtensionPoint
           id="checkout-summary"
           totalizers={totalizers}
@@ -81,10 +83,7 @@ const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
 }
 
 export default compose(
-  graphql(CartQuery.default, { name: 'CartQuery', options: { ssr: false } }),
-  graphql(UpdateItems.default, { name: 'UpdateItems' }),
-  branch(
-    ({ CartQuery }: any) => !!CartQuery.loading,
-    renderComponent(Spinner)
-  )
+  graphql(CartQuery, { name: 'CartQuery', options: { ssr: false } }),
+  graphql(UpdateItems, { name: 'UpdateItems' }),
+  branch(({ CartQuery }: any) => !!CartQuery.loading, renderComponent(Spinner))
 )(Cart)
