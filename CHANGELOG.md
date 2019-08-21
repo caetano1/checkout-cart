@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- `Cart` component is now wrapped by a `OrderManagerProvider` temporarily.
+
 ## [0.2.0] - 2019-08-19
 
 ### Added

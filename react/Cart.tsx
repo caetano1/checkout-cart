@@ -5,6 +5,7 @@ import { compose, graphql } from 'react-apollo'
 import { branch, renderComponent } from 'recompose'
 import { Spinner } from 'vtex.styleguide'
 import { ExtensionPoint } from 'vtex.render-runtime'
+import { OrderManagerProvider } from 'vtex.order-manager/OrderManager'
 
 import CartQuery from './graphql/cart.graphql'
 import UpdateItems from './graphql/updateItems.graphql'
@@ -82,8 +83,14 @@ const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
   )
 }
 
-export default compose(
+const EnhancedCart = compose(
   graphql(CartQuery, { name: 'CartQuery', options: { ssr: false } }),
   graphql(UpdateItems, { name: 'UpdateItems' }),
   branch(({ CartQuery }: any) => !!CartQuery.loading, renderComponent(Spinner))
 )(Cart)
+
+export default () => (
+  <OrderManagerProvider>
+    <EnhancedCart />
+  </OrderManagerProvider>
+)
