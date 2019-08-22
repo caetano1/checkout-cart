@@ -1,8 +1,5 @@
 {
   "checkout-cart": {
-    "blocks": [
-      "checkout-summary",
-      "product-list"
-    ]
+    "blocks": ["checkout-summary", "product-list", "shipping-calculator"]
   }
 }

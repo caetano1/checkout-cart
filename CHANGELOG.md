@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- `shipping-calculator` extension point to `Cart`.
+
 ## [0.3.1] - 2019-08-21
 
 ### Changed
