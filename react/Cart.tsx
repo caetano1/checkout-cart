@@ -2,8 +2,9 @@ import { debounce } from 'debounce'
 import { adjust } from 'ramda'
 import React, { FunctionComponent, useState } from 'react'
 import { compose, graphql } from 'react-apollo'
+import { FormattedMessage, defineMessages } from 'react-intl'
 import { branch, renderComponent } from 'recompose'
-import { Spinner } from 'vtex.styleguide'
+import { Button, Spinner } from 'vtex.styleguide'
 import { ExtensionPoint } from 'vtex.render-runtime'
 import { OrderManagerProvider } from 'vtex.order-manager/OrderManager'
 
@@ -34,6 +35,13 @@ const debouncedUpdateItems = debounce(
   DEBOUNCE_TIME_MS
 )
 
+defineMessages({
+  continueShopping: {
+    defaultMessage: 'Continue Shopping',
+    id: 'store/cart.continueShopping',
+  },
+})
+
 const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
   const {
     cart: {
@@ -57,9 +65,9 @@ const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
   }
 
   return (
-    <div className="mw9 center flex-l ph6-l ph7-xl">
-      <div className="bn b--muted-4 flex-auto-l pt7-l br-l pr7-l pb6-l w-70-l">
-        <div className="mr7-xl">
+    <div className={`${styles.container} bb-m b--muted-4`}>
+      <div className="flex-l cf">
+        <div className={`${styles.list} flex-auto-l mb6-l mt7-l mr7-l mb6-l`}>
           <ExtensionPoint
             id="product-list"
             items={curItems}
@@ -67,18 +75,32 @@ const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
             onRemove={handleRemove}
             currency={currencyCode}
           />
+          <div className={`${styles.continue1} dn mt7 db-l fr`}>
+            <Button href="/" variation="secondary" block>
+              <FormattedMessage id="store/cart.continueShopping" />
+            </Button>
+          </div>
+        </div>
+        <div
+          className={`${styles.summary} mh5 mh0-ns bl-l b--muted-4 mh0-m pl6-l flex-fixed-l w-25-l`}
+        >
+          <div className="pb4 fl-m w-50-m pb6-m ph6-m pb4-l w-auto-l fn-l bn-l ph0-l">
+            <ExtensionPoint id="shipping-calculator" />
+          </div>
+          <div className="pb4 fr-m w-50-m bl-m pb6-m ph6-m pb4-l b--muted-4 w-auto-l fn-l bn-l ph0-l">
+            <ExtensionPoint
+              id="checkout-summary"
+              totalizers={totalizers}
+              total={value}
+              currency={currencyCode}
+            />
+          </div>
         </div>
       </div>
-      <div
-        className={`${styles.summary} flex-auto-l w-100 w-30-l fr-m pl6-m pr6-m pt7-l pb6-l pb7-xl pl7-xl ml7-xl`}
-      >
-        <ExtensionPoint id="shipping-calculator" />
-        <ExtensionPoint
-          id="checkout-summary"
-          totalizers={totalizers}
-          total={value}
-          currency={currencyCode}
-        />
+      <div className={`${styles.continue2} ph5 pv7 w-50-m ph6-m fr-m dn-l`}>
+        <Button variation="secondary" block>
+          <FormattedMessage id="store/cart.continueShopping" />
+        </Button>
       </div>
     </div>
   )
