@@ -8,6 +8,7 @@ import { Button, Spinner } from 'vtex.styleguide'
 import { ExtensionPoint } from 'vtex.render-runtime'
 import { OrderManagerProvider } from 'vtex.order-manager/OrderManager'
 
+import CartTitle from './components/CartTitle'
 import CartQuery from './graphql/cart.graphql'
 import UpdateItems from './graphql/updateItems.graphql'
 
@@ -68,6 +69,7 @@ const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
     <div className={`${styles.container} bb-m b--muted-4`}>
       <div className="flex-l cf">
         <div className={`${styles.list} flex-auto-l mb6-l mt7-l mr7-l mb6-l`}>
+          <CartTitle items={curItems} />
           <ExtensionPoint
             id="product-list"
             items={curItems}
