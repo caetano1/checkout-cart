@@ -2,6 +2,7 @@ import { debounce } from 'debounce'
 import { adjust } from 'ramda'
 import React, { FunctionComponent, useState } from 'react'
 import { compose, graphql } from 'react-apollo'
+import { FormattedMessage, defineMessages } from 'react-intl'
 import { branch, renderComponent } from 'recompose'
 import { Button, Spinner } from 'vtex.styleguide'
 import { ExtensionPoint } from 'vtex.render-runtime'
@@ -33,6 +34,13 @@ const debouncedUpdateItems = debounce(
     }),
   DEBOUNCE_TIME_MS
 )
+
+defineMessages({
+  continueShopping: {
+    defaultMessage: 'Continue Shopping',
+    id: 'store/cart.continueShopping',
+  },
+})
 
 const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
   const {
@@ -68,10 +76,14 @@ const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
             currency={currencyCode}
           />
           <div className={`${styles.continue1} dn mt7 db-l fr`}>
-            <Button variation="secondary" block>Continue Shopping</Button>
+            <Button href="/" variation="secondary" block>
+              <FormattedMessage id="store/cart.continueShopping" />
+            </Button>
           </div>
         </div>
-        <div className={`${styles.summary} mh5 mh0-ns bl-l b--muted-4 mh0-m pl6-l flex-fixed-l w-25-l`}>
+        <div
+          className={`${styles.summary} mh5 mh0-ns bl-l b--muted-4 mh0-m pl6-l flex-fixed-l w-25-l`}
+        >
           <div className="pb4 fl-m w-50-m pb6-m ph6-m pb4-l w-auto-l fn-l bn-l ph0-l">
             <ExtensionPoint id="shipping-calculator" />
           </div>
@@ -86,7 +98,9 @@ const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
         </div>
       </div>
       <div className={`${styles.continue2} ph5 pv7 w-50-m ph6-m fr-m dn-l`}>
-        <Button variation="secondary" block>Continue Shopping</Button>
+        <Button variation="secondary" block>
+          <FormattedMessage id="store/cart.continueShopping" />
+        </Button>
       </div>
     </div>
   )
