@@ -9,6 +9,8 @@
 /* L+ */
 @media screen and (min-width: 64em) {
   .summary {
+    min-width: 17em;
+    max-width: 22em;
     padding-top: 7em;
   }
   .continue1 {

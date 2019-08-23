@@ -59,7 +59,7 @@ const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
   return (
     <div className={`${styles.container} bb-m b--muted-4`}>
       <div className="flex-l cf">
-        <div className={`${styles.list} flex-fixed-l w-70-l mb6-l mt7-l mr7-l mb6-l`}>
+        <div className={`${styles.list} flex-auto-l mb6-l mt7-l mr7-l mb6-l`}>
           <ExtensionPoint
             id="product-list"
             items={curItems}
@@ -71,11 +71,11 @@ const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
             <Button variation="secondary" block>Continue Shopping</Button>
           </div>
         </div>
-        <div className={`${styles.summary} mh5 mh0-ns bl-l b--muted-4 mh0-m pl6-l flex-auto-l`}>
-          <div className="fl-m w-50-m pb6-m ph6-m w-auto-l fn-l bn-l ph0-l">
+        <div className={`${styles.summary} mh5 mh0-ns bl-l b--muted-4 mh0-m pl6-l flex-fixed-l w-25-l`}>
+          <div className="pb4 fl-m w-50-m pb6-m ph6-m pb4-l w-auto-l fn-l bn-l ph0-l">
             <ExtensionPoint id="shipping-calculator" />
           </div>
-          <div className="fr-m w-50-m bl-m pb6-m ph6-m b--muted-4 w-auto-l fn-l bn-l ph0-l">
+          <div className="pb4 fr-m w-50-m bl-m pb6-m ph6-m pb4-l b--muted-4 w-auto-l fn-l bn-l ph0-l">
             <ExtensionPoint
               id="checkout-summary"
               totalizers={totalizers}
