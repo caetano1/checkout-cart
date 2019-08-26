@@ -1,3 +1,5 @@
 {
-  "store/cart.continueShopping": "Continue shopping"
+  "store/cart.continueShopping": "Continue shopping",
+  "store/cart.title": "Cart",
+  "store/cart.items": "({itemsQuantity, plural, one {# item} other {# items}})"
 }
