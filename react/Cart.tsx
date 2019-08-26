@@ -43,7 +43,11 @@ defineMessages({
   },
 })
 
-const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
+const Cart: FunctionComponent<any> = compose(
+  graphql(CartQuery, { name: 'CartQuery', options: { ssr: false } }),
+  graphql(UpdateItems, { name: 'UpdateItems' }),
+  branch(({ CartQuery }: any) => !!CartQuery.loading, renderComponent(Spinner))
+)(({ CartQuery, UpdateItems }: any) => {
   const {
     cart: {
       items,
@@ -106,16 +110,12 @@ const Cart: FunctionComponent<any> = ({ CartQuery, UpdateItems }) => {
       </div>
     </div>
   )
-}
+})
 
-const EnhancedCart = compose(
-  graphql(CartQuery, { name: 'CartQuery', options: { ssr: false } }),
-  graphql(UpdateItems, { name: 'UpdateItems' }),
-  branch(({ CartQuery }: any) => !!CartQuery.loading, renderComponent(Spinner))
-)(Cart)
-
-export default () => (
+const EnhancedCart = () => (
   <OrderManagerProvider>
-    <EnhancedCart />
+    <Cart />
   </OrderManagerProvider>
 )
+
+export default EnhancedCart
