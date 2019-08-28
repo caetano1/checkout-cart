@@ -1,10 +1,8 @@
 import React, { FunctionComponent } from 'react'
 import { FormattedMessage, defineMessages } from 'react-intl'
 import { OrderItemsProvider, useOrderItems } from 'vtex.order-items/OrderItems'
-import {
-  OrderManagerProvider,
-  useOrderManager,
-} from 'vtex.order-manager/OrderManager'
+import { OrderFormProvider, useOrderForm } from 'vtex.order-manager/OrderForm'
+import { OrderQueueProvider } from 'vtex.order-manager/OrderQueue'
 import { ExtensionPoint } from 'vtex.render-runtime'
 import { Button, Spinner } from 'vtex.styleguide'
 
@@ -39,7 +37,7 @@ const ProductList: FunctionComponent<ProductListProps> = ({ items }) => {
 }
 
 const Cart: FunctionComponent = () => {
-  const { loading, orderForm } = useOrderManager()
+  const { loading, orderForm } = useOrderForm()
 
   if (loading) {
     return <Spinner />
@@ -86,9 +84,11 @@ const Cart: FunctionComponent = () => {
 }
 
 const EnhancedCart = () => (
-  <OrderManagerProvider>
-    <Cart />
-  </OrderManagerProvider>
+  <OrderQueueProvider>
+    <OrderFormProvider>
+      <Cart />
+    </OrderFormProvider>
+  </OrderQueueProvider>
 )
 
 export default EnhancedCart
