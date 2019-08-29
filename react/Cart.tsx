@@ -1,40 +1,14 @@
-import { debounce } from 'debounce'
-import { adjust } from 'ramda'
-import React, { FunctionComponent, useState } from 'react'
-import { compose, graphql } from 'react-apollo'
+import React, { FunctionComponent } from 'react'
 import { FormattedMessage, defineMessages } from 'react-intl'
-import { branch, renderComponent } from 'recompose'
-import { Button, Spinner } from 'vtex.styleguide'
+import { OrderItemsProvider, useOrderItems } from 'vtex.order-items/OrderItems'
+import { OrderFormProvider, useOrderForm } from 'vtex.order-manager/OrderForm'
+import { OrderQueueProvider } from 'vtex.order-manager/OrderQueue'
 import { ExtensionPoint } from 'vtex.render-runtime'
-import { OrderManagerProvider } from 'vtex.order-manager/OrderManager'
+import { Button, Spinner } from 'vtex.styleguide'
 
 import CartTitle from './components/CartTitle'
-import CartQuery from './graphql/cart.graphql'
-import UpdateItems from './graphql/updateItems.graphql'
 
 import styles from './styles.css'
-
-const DEBOUNCE_TIME_MS = 300
-
-const debouncedUpdateItems = debounce(
-  (UpdateItems: any, index: number, value: number) =>
-    UpdateItems({
-      variables: {
-        orderItems: [
-          {
-            index,
-            quantity: value,
-          },
-        ],
-      },
-      refetchQueries: [
-        {
-          query: CartQuery,
-        },
-      ],
-    }),
-  DEBOUNCE_TIME_MS
-)
 
 defineMessages({
   continueShopping: {
@@ -43,44 +17,42 @@ defineMessages({
   },
 })
 
-const Cart: FunctionComponent<any> = compose(
-  graphql(CartQuery, { name: 'CartQuery', options: { ssr: false } }),
-  graphql(UpdateItems, { name: 'UpdateItems' }),
-  branch(({ CartQuery }: any) => !!CartQuery.loading, renderComponent(Spinner))
-)(({ CartQuery, UpdateItems }: any) => {
-  const {
-    cart: {
-      items,
-      storePreferencesData: { currencyCode },
-      totalizers,
-      value,
-    },
-  } = CartQuery
+interface ProductListProps {
+  items: Item[]
+}
 
-  const [curItems, setItems] = useState(items)
+const ProductList: FunctionComponent<ProductListProps> = ({ items }) => {
+  const { updateItem } = useOrderItems()
 
-  const handleQuantityChange = (index: number, value: number) => {
-    setItems(adjust(index, item => ({ ...item, quantity: value }), curItems))
-    debouncedUpdateItems(UpdateItems, index, value)
+  const handleRemove = (index: number) => updateItem(index, 0)
+
+  return (
+    <ExtensionPoint
+      id="product-list"
+      items={items}
+      onQuantityChange={updateItem}
+      onRemove={handleRemove}
+    />
+  )
+}
+
+const Cart: FunctionComponent = () => {
+  const { loading, orderForm } = useOrderForm()
+
+  if (loading) {
+    return <Spinner />
   }
 
-  const handleRemove = (index: number) => {
-    setItems([...curItems.slice(0, index), ...curItems.slice(index + 1)])
-    debouncedUpdateItems(UpdateItems, index, 0)
-  }
+  const { items, totalizers, value } = orderForm
 
   return (
     <div className={`${styles.container} bb-m b--muted-4`}>
       <div className="flex-l cf">
         <div className={`${styles.list} flex-auto-l mb6-l mt7-l mr7-l mb6-l`}>
-          <CartTitle items={curItems} />
-          <ExtensionPoint
-            id="product-list"
-            items={curItems}
-            onQuantityChange={handleQuantityChange}
-            onRemove={handleRemove}
-            currency={currencyCode}
-          />
+          <CartTitle items={items} />
+          <OrderItemsProvider>
+            <ProductList items={items} />
+          </OrderItemsProvider>
           <div className={`${styles.continue1} dn mt7 db-l fr`}>
             <Button href="/" variation="secondary" block>
               <FormattedMessage id="store/cart.continueShopping" />
@@ -98,7 +70,6 @@ const Cart: FunctionComponent<any> = compose(
               id="checkout-summary"
               totalizers={totalizers}
               total={value}
-              currency={currencyCode}
             />
           </div>
         </div>
@@ -110,12 +81,14 @@ const Cart: FunctionComponent<any> = compose(
       </div>
     </div>
   )
-})
+}
 
 const EnhancedCart = () => (
-  <OrderManagerProvider>
-    <Cart />
-  </OrderManagerProvider>
+  <OrderQueueProvider>
+    <OrderFormProvider>
+      <Cart />
+    </OrderFormProvider>
+  </OrderQueueProvider>
 )
 
 export default EnhancedCart
