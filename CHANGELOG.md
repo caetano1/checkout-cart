@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Product list change events are handled with the item's `uniqueId` instead of its `index`.
+
 ## [0.7.0] - 2019-08-29
 
 ### Changed

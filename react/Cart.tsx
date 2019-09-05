@@ -24,13 +24,16 @@ interface ProductListProps {
 const ProductList: FunctionComponent<ProductListProps> = ({ items }) => {
   const { updateItem } = useOrderItems()
 
-  const handleRemove = (index: number) => updateItem(index, 0)
+  const handleQuantityChange = (uniqueId: string, quantity: number) =>
+    updateItem({ uniqueId, quantity })
+  const handleRemove = (uniqueId: string) =>
+    updateItem({ uniqueId, quantity: 0 })
 
   return (
     <ExtensionPoint
       id="product-list"
       items={items}
-      onQuantityChange={updateItem}
+      onQuantityChange={handleQuantityChange}
       onRemove={handleRemove}
     />
   )
