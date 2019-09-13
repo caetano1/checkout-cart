@@ -1,7 +1,7 @@
 {
   "vendor": "vtex",
   "name": "checkout-cart",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "title": "Checkout Cart",
   "description": "Checkout Cart",
   "defaultLocale": "pt-BR",
