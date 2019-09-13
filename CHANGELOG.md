@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Adapted product list to the changes in the `order-items` API.
+
 ## [0.8.1] - 2019-09-10
 
 ### Fixed
