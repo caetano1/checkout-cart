@@ -11,7 +11,7 @@
     "component": "vtex.render-runtime/LayoutContainer",
     "composition": "children",
     "allowed": "*"
-  },  
+  },
   "empty-state-icon": {
     "component": "EmptyStateIcon"
   },

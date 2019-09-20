@@ -10,11 +10,9 @@ defineMessages({
 })
 
 const ContinueShopping: FunctionComponent = () => (
-  <div className="w-50-m fr-m">
-    <Button variation="secondary" block>
-      <FormattedMessage id="store/cart.continueShopping" />
-    </Button>
-  </div>
+  <Button variation="secondary">
+    <FormattedMessage id="store/cart.continueShopping" />
+  </Button>
 )
 
 export default ContinueShopping

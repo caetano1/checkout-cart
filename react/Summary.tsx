@@ -8,13 +8,11 @@ const SummaryWrapper: FunctionComponent = () => {
   } = useOrderForm()
 
   return (
-    <div className="flex-none">
-      <ExtensionPoint
-        id="checkout-summary"
-        totalizers={totalizers}
-        total={value}
-      />
-    </div>
+    <ExtensionPoint
+      id="checkout-summary"
+      totalizers={totalizers}
+      total={value}
+    />
   )
 }
 
