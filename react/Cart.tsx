@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import { FormattedMessage, defineMessages } from 'react-intl'
 import { OrderItemsProvider, useOrderItems } from 'vtex.order-items/OrderItems'
+import { OrderShippingProvider } from 'vtex.order-shipping/OrderShipping'
 import { OrderFormProvider, useOrderForm } from 'vtex.order-manager/OrderForm'
 import { OrderQueueProvider } from 'vtex.order-manager/OrderQueue'
 import { ExtensionPoint } from 'vtex.render-runtime'
@@ -65,7 +66,9 @@ const Cart: FunctionComponent = () => {
           className={`${styles.summary} mh5 mh0-ns bl-l b--muted-4 mh0-m pl6-l flex-fixed-l w-25-l`}
         >
           <div className="pb4 fl-m w-50-m pb6-m ph6-m pb4-l w-auto-l fn-l bn-l ph0-l">
-            <ExtensionPoint id="shipping-calculator" />
+            <OrderShippingProvider>
+              <ExtensionPoint id="shipping-calculator" />
+            </OrderShippingProvider>
           </div>
           <div className="pb4 fr-m w-50-m bl-m pb6-m ph6-m pb4-l b--muted-4 w-auto-l fn-l bn-l ph0-l">
             <ExtensionPoint
