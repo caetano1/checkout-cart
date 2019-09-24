@@ -1,11 +1,11 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useContext, useEffect, useRef } from 'react'
 import { FormattedMessage, defineMessages } from 'react-intl'
 import { OrderItemsProvider, useOrderItems } from 'vtex.order-items/OrderItems'
 import { OrderShippingProvider } from 'vtex.order-shipping/OrderShipping'
 import { OrderFormProvider, useOrderForm } from 'vtex.order-manager/OrderForm'
 import { OrderQueueProvider } from 'vtex.order-manager/OrderQueue'
 import { ExtensionPoint } from 'vtex.render-runtime'
-import { Button, Spinner } from 'vtex.styleguide'
+import { Button, Spinner, ToastContext } from 'vtex.styleguide'
 
 import CartTitle from './components/CartTitle'
 
@@ -39,6 +39,24 @@ const ProductList: FunctionComponent<ProductListProps> = ({ items }) => {
   )
 }
 
+const useToasts = (messages: Message[]) => {
+  const { showToast, toastState } = useContext(ToastContext)
+  const toastQueueRef = useRef([] as string[])
+
+  useEffect(() => {
+    toastQueueRef.current = [
+      ...messages.map(msg => msg.text),
+      ...toastQueueRef.current,
+    ]
+  }, [messages])
+
+  useEffect(() => {
+    if (!toastState.isToastVisible && toastQueueRef.current.length > 0) {
+      showToast(toastQueueRef.current.pop())
+    }
+  }, [toastState, messages])
+}
+
 const Cart: FunctionComponent = () => {
   const { loading, orderForm } = useOrderForm()
 
@@ -46,7 +64,14 @@ const Cart: FunctionComponent = () => {
     return <Spinner />
   }
 
-  const { items, totalizers, value } = orderForm
+  const {
+    items,
+    totalizers,
+    value,
+    messages: { generalMessages },
+  } = orderForm
+
+  useToasts(generalMessages)
 
   return (
     <div className={`${styles.container} bb-m b--muted-4`}>

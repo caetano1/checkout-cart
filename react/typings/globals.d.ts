@@ -6,6 +6,7 @@ interface Item {
   imageUrl: string
   listPrice: number
   measurementUnit: string
+  messages: OrderFormMessages
   name: string
   price: number
   productId: string
@@ -18,6 +19,17 @@ interface Item {
 
 interface ItemAdditionalInfo {
   brandName: string
+}
+
+interface OrderFormMessages {
+  couponMessages: Message[]
+  generalMessages: Message[]
+}
+
+interface Message {
+  code: string
+  text: string
+  status: string
 }
 
 interface SKUSpecification {
