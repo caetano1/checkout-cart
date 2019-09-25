@@ -2,6 +2,7 @@
   "checkout-cart": {
     "component": "CartWrapper",
     "allowed": [
+      "checkout-cart-single-col",
       "checkout-cart-two-cols",
       "empty-state"
     ]
@@ -16,6 +17,11 @@
   },
   "empty-state-message": {
     "component": "EmptyStateMessage"
+  },
+  "checkout-cart-single-col": {
+    "component": "vtex.render-runtime/LayoutContainer",
+    "composition": "children",
+    "allowed": "*"
   },
   "checkout-cart-two-cols": {
     "component": "vtex.render-runtime/LayoutContainer",

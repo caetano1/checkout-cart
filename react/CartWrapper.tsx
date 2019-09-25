@@ -3,6 +3,7 @@ import { OrderFormProvider, useOrderForm } from 'vtex.order-manager/OrderForm'
 import { OrderQueueProvider } from 'vtex.order-manager/OrderQueue'
 import { ExtensionPoint } from 'vtex.render-runtime'
 import { Spinner, ToastContext } from 'vtex.styleguide'
+import { useDevice } from 'vtex.device-detector'
 
 const useToasts = (messages: Message[]) => {
   const { showToast, toastState } = useContext(ToastContext)
@@ -24,6 +25,7 @@ const useToasts = (messages: Message[]) => {
 
 const CartWrapper: FunctionComponent = () => {
   const { loading, orderForm } = useOrderForm()
+  const { device } = useDevice()
 
   if (loading) {
     return <Spinner />
@@ -35,7 +37,11 @@ const CartWrapper: FunctionComponent = () => {
     return <ExtensionPoint id="empty-state" />
   }
 
-  return <ExtensionPoint id="checkout-cart-two-cols" />
+  return device === 'phone' ? (
+    <ExtensionPoint id="checkout-cart-single-col" />
+  ) : (
+    <ExtensionPoint id="checkout-cart-two-cols" />
+  )
 }
 
 const EnhancedCartWrapper = () => (

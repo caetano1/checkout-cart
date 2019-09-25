@@ -1,6 +1,7 @@
 {
   "checkout-cart": {
     "blocks": [
+      "checkout-cart-single-col",
       "checkout-cart-two-cols",
       "empty-state"
     ]
@@ -26,6 +27,15 @@
   "flex-layout.row#empty-state-message": {
     "children": ["empty-state-message"]
   },  
+  "checkout-cart-single-col": {
+    "children": [
+      "flex-layout.row#title",
+      "flex-layout.row#product-list",
+      "flex-layout.row#shipping",
+      "flex-layout.row#summary",
+      "flex-layout.row#continue-shopping"      
+    ]
+  },
   "checkout-cart-two-cols": {
     "children": ["flex-layout.row#two-cols"]
   },
