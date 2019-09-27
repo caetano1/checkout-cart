@@ -1,5 +1,31 @@
 {
   "checkout-cart": {
-    "blocks": ["checkout-summary", "product-list", "shipping-calculator"]
+    "blocks": [
+      "checkout-summary",
+      "empty-state",
+      "product-list",
+      "shipping-calculator"
+    ]
+  },
+  "empty-state": {
+    "children": ["flex-layout.row#empty-state"]
+  },
+  "flex-layout.row#empty-state": {
+    "children": ["flex-layout.col#empty-state"],
+    "props": {
+      "paddingTop": 10
+    }
+  },
+  "flex-layout.col#empty-state": {
+    "children": [
+      "flex-layout.row#empty-state-icon",
+      "flex-layout.row#empty-state-message"
+    ]
+  },
+  "flex-layout.row#empty-state-icon": {
+    "children": ["empty-state-icon"]
+  },
+  "flex-layout.row#empty-state-message": {
+    "children": ["empty-state-message"]
   }
 }

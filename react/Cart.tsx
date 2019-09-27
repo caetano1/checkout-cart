@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useContext, useEffect, useRef } from 'react'
-import { FormattedMessage, defineMessages } from 'react-intl'
+import { FormattedMessage, defineMessages, injectIntl } from 'react-intl'
 import { OrderItemsProvider, useOrderItems } from 'vtex.order-items/OrderItems'
 import { OrderShippingProvider } from 'vtex.order-shipping/OrderShipping'
 import { OrderFormProvider, useOrderForm } from 'vtex.order-manager/OrderForm'
@@ -73,6 +73,10 @@ const Cart: FunctionComponent = () => {
 
   useToasts(generalMessages)
 
+  if (items.length === 0) {
+    return <ExtensionPoint id="empty-state" />
+  }
+
   return (
     <div className={`${styles.container} bb-m b--muted-4`}>
       <div className="flex-l cf">
@@ -113,12 +117,12 @@ const Cart: FunctionComponent = () => {
   )
 }
 
-const EnhancedCart = () => (
+const EnhancedCart = (props: any) => (
   <OrderQueueProvider>
     <OrderFormProvider>
-      <Cart />
+      <Cart {...props} />
     </OrderFormProvider>
   </OrderQueueProvider>
 )
 
-export default EnhancedCart
+export default injectIntl(EnhancedCart)

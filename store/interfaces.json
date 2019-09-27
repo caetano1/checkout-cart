@@ -1,6 +1,22 @@
 {
   "checkout-cart": {
     "component": "Cart",
-    "allowed": ["checkout-summary", "product-list", "shipping-calculator"]
+    "allowed": [
+      "checkout-summary",
+      "empty-state",
+      "product-list",
+      "shipping-calculator"
+    ]
+  },
+  "empty-state": {
+    "component": "vtex.render-runtime/LayoutContainer",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "empty-state-icon": {
+    "component": "EmptyStateIcon"
+  },
+  "empty-state-message": {
+    "component": "EmptyStateMessage"
   }
 }
