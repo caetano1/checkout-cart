@@ -55,12 +55,14 @@
   "checkout-cart-two-cols": {
     "children": [
       "flex-layout.row#title",
-      "flex-layout.row#two-cols"
+      "flex-layout.row#two-cols",
+      "divider#horizontal"
     ]
   },
   "flex-layout.row#two-cols": {
     "children": [
       "flex-layout.col#left",
+      "divider#vertical",
       "flex-layout.col#right"
     ],
     "props": {
@@ -143,5 +145,15 @@
   },
   "summary-wrapper": {
     "blocks": ["checkout-summary"]
+  },
+  "divider#vertical": {
+    "props": {
+      "orientation": "vertical"
+    }
+  },
+  "divider#horizontal": {
+    "props": {
+      "orientation": "horizontal"
+    }
   }
 }
