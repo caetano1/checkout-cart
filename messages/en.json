@@ -1,5 +1,8 @@
 {
   "store/cart.continueShopping": "Continue shopping",
   "store/cart.title": "Cart",
-  "store/cart.items": "({itemsQuantity, plural, one {# item} other {# items}})"
+  "store/cart.items": "({itemsQuantity, plural, one {# item} other {# items}})",
+  "store/cart.emptyState.title": "Your cart is empty",
+  "store/cart.emptyState.message": "Add products by navigating through categories or by searching for them.",
+  "store/cart.emptyState.button": "Choose products"
 }
