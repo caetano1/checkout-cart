@@ -22,7 +22,7 @@ const EmptyStateMessage: FunctionComponent<InjectedIntlProps> = ({
       <FormattedMessage id="store/cart.emptyState.message" />
     </p>
     <div className="pt6">
-      <Button variation="secondary" size="small">
+      <Button href="/" variation="secondary">
         <FormattedMessage id="store/cart.emptyState.button" />
       </Button>
     </div>
