@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- `Cart` was broken into several smaller components in order to implement the `blocks` structure using `flex-layout`.
+
 ## [0.11.1] - 2019-10-01
 
 ### Fixed
