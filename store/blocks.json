@@ -54,7 +54,6 @@
   },
   "checkout-cart-two-cols": {
     "children": [
-      "flex-layout.row#title",
       "flex-layout.row#two-cols",
       "divider#horizontal"
     ]
@@ -67,17 +66,19 @@
     ],
     "props": {
       "colSizing": "auto",
-      "marginBottom": "6",
       "marginTop": "2"
     }
   },
   "flex-layout.col#left": {
     "children": [
+      "flex-layout.row#title",
       "flex-layout.row#product-list",
       "flex-layout.row#continue-shopping.inline"
     ],
     "props": {
-      "width": "grow"
+      "width": "grow",
+      "marginRight": "7",
+      "preventVerticalStretch": "true"
     }
   },
   "flex-layout.row#title": {
@@ -101,6 +102,7 @@
   "flex-layout.row#continue-shopping.inline": {
     "children": ["continue-shopping"],
     "props": {
+      "marginBottom": "7",
       "horizontalAlign": "right",
       "preventHorizontalStretch": true
     }
@@ -115,7 +117,8 @@
       "flex-layout.col#rightContent"
     ],
     "props": {
-      "marginTop": "6"
+      "marginTop": "9",
+      "marginBottom": "6"
     }
   },
   "flex-layout.col#rightContent": {
@@ -126,7 +129,6 @@
     "props": {
       "blockClass": "sidebar",
       "marginLeft": "7",
-      "paddingLeft": "7",
       "preventVerticalStretch": "true",
       "width": "grow"
     }
