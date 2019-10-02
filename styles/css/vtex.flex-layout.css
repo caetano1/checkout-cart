@@ -6,18 +6,10 @@
   }
 }
 
-/* XL- */
-@media screen and (min-width: 80em) and (max-width: 104em) {
+/* XL+ */
+@media screen and (min-width: 80em) {
   .flexCol--sidebar {
     min-width: 24em;
     max-width: 24em;
-  }
-}
-
-/* XL+ */
-@media screen and (min-width: 104em) {
-  .flexCol--sidebar {
-    min-width: 32em;
-    max-width: 32em;
   }
 }
