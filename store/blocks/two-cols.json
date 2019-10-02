@@ -18,8 +18,7 @@
       "flex-layout.col#right"
     ],
     "props": {
-      "colSizing": "auto",
-      "marginTop": 2
+      "colSizing": "auto"
     }
   },
   "flex-layout.col#left": {
@@ -53,7 +52,7 @@
     ],
     "props": {
       "marginTop": 9,
-      "marginBottom": 6
+      "marginBottom": 7
     }
   },
   "flex-layout.col#right-content": {
