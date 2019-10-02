@@ -51,7 +51,7 @@
       "flex-layout.col#right-content"
     ],
     "props": {
-      "marginTop": 9,
+      "blockClass": "sidebar",
       "marginBottom": 7
     }
   },
@@ -61,7 +61,7 @@
       "flex-layout.row#summary"
     ],
     "props": {
-      "blockClass": "sidebar",
+      "blockClass": "sidebarContent",
       "marginLeft": 7,
       "preventVerticalStretch": "true",
       "width": "grow"
