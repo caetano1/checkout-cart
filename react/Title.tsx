@@ -1,18 +1,21 @@
 import React, { FunctionComponent } from 'react'
 import { FormattedMessage } from 'react-intl'
+import { useOrderForm } from 'vtex.order-manager/OrderForm'
 
 const AVAILABLE = 'available'
 
-interface Props {
-  items: Item[]
-}
+const CartTitle: FunctionComponent = () => {
+  const {
+    orderForm: { items },
+  } = useOrderForm()
 
-const CartTitle: FunctionComponent<Props> = ({ items }) => {
-  const showQuantity = items.every(item => item.availability === AVAILABLE)
+  const showQuantity = items.every(
+    (item: Item) => item.availability === AVAILABLE
+  )
 
   return (
     <div>
-      <h3 className="mh5 mh6-m mh0-l">
+      <h3>
         <span className="t-heading-3 c-on-base t-heading-2-l">
           <FormattedMessage id="store/cart.title" />
         </span>

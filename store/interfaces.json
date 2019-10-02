@@ -1,11 +1,10 @@
 {
   "checkout-cart": {
-    "component": "Cart",
+    "component": "CartWrapper",
     "allowed": [
-      "checkout-summary",
-      "empty-state",
-      "product-list",
-      "shipping-calculator"
+      "checkout-cart-single-col",
+      "checkout-cart-two-cols",
+      "empty-state"
     ]
   },
   "empty-state": {
@@ -18,5 +17,33 @@
   },
   "empty-state-message": {
     "component": "EmptyStateMessage"
+  },
+  "checkout-cart-single-col": {
+    "component": "vtex.render-runtime/LayoutContainer",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "checkout-cart-two-cols": {
+    "component": "vtex.render-runtime/LayoutContainer",
+    "composition": "children",
+    "allowed": "*"
+  },
+  "title": {
+    "component": "Title"
+  },
+  "product-list-wrapper": {
+    "component": "ProductList",
+    "allowed": ["product-list"]
+  },
+  "continue-shopping": {
+    "component": "ContinueShopping"
+  },
+  "shipping-wrapper": {
+    "component": "Shipping",
+    "allowed": ["shipping-calculator"]
+  },
+  "summary-wrapper": {
+    "component": "Summary",
+    "allowed": ["checkout-summary"]
   }
 }
