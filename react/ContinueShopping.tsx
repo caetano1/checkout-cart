@@ -10,7 +10,7 @@ defineMessages({
 })
 
 const ContinueShopping: FunctionComponent = () => (
-  <Button variation="secondary">
+  <Button href="/" variation="secondary">
     <FormattedMessage id="store/cart.continueShopping" />
   </Button>
 )

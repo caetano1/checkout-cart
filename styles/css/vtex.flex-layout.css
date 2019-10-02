@@ -1,23 +1,25 @@
 /* M, L */
 @media screen and (min-width: 40em) and (max-width: 80em) {
-  .flexCol--sidebar {
+  .flexCol--sidebarContent {
     min-width: 16em;
     max-width: 16em;
   }
 }
 
-/* XL- */
-@media screen and (min-width: 80em) and (max-width: 104em) {
-  .flexCol--sidebar {
+/* XL+ */
+@media screen and (min-width: 80em) {
+  .flexCol--sidebarContent {
     min-width: 24em;
     max-width: 24em;
   }
 }
 
-/* XL+ */
-@media screen and (min-width: 104em) {
-  .flexCol--sidebar {
-    min-width: 32em;
-    max-width: 32em;
+.flexRow--sidebar {
+  margin-top: 5.84em;
+}
+
+@media screen and (min-width: 64em) {
+  .flexRow--sidebar {
+    margin-top: 6.4em;
   }
 }

@@ -45,5 +45,8 @@
   "summary-wrapper": {
     "component": "Summary",
     "allowed": ["checkout-summary"]
+  },
+  "divider": {
+    "component": "DividerWrapper"
   }
 }
