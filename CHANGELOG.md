@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
-- Layout's responsive margins
+- Layout's responsive margins.
 
 ## [0.13.0] - 2019-10-02
 
