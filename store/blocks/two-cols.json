@@ -55,7 +55,7 @@
     ],
     "props": {
       "blockClass": "sidebar",
-      "marginBottom": 7
+      "marginBottom": "7"
     }
   },
   "flex-layout.col#right-content": {
