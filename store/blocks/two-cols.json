@@ -29,7 +29,10 @@
     ],
     "props": {
       "width": "grow",
-      "marginRight": 7,
+      "marginRight": {
+        "tablet": 6,
+        "desktop": 8
+      },
       "preventVerticalStretch": "true"
     }
   },
@@ -62,7 +65,10 @@
     ],
     "props": {
       "blockClass": "sidebarContent",
-      "marginLeft": 7,
+      "marginLeft": {
+        "tablet": 6,
+        "desktop": 8
+      },
       "preventVerticalStretch": "true",
       "width": "grow"
     }
