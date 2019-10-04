@@ -30,8 +30,8 @@
     "props": {
       "width": "grow",
       "marginRight": {
-        "tablet": "6",
-        "desktop": "8"
+        "tablet": 6,
+        "desktop": 8
       },
       "preventVerticalStretch": "true"
     }
@@ -55,7 +55,7 @@
     ],
     "props": {
       "blockClass": "sidebar",
-      "marginBottom": "7"
+      "marginBottom": 7
     }
   },
   "flex-layout.col#right-content": {
@@ -66,8 +66,8 @@
     "props": {
       "blockClass": "sidebarContent",
       "marginLeft": {
-        "tablet": "6",
-        "desktop": "8"
+        "tablet": 6,
+        "desktop": 8
       },
       "preventVerticalStretch": "true",
       "width": "grow"
