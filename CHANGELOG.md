@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+
+- "Continue Shopping" button text positioning on mobile.
+
 ## [0.13.1] - 2019-10-04
 
 ### Changed
