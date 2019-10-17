@@ -48,5 +48,8 @@
   },
   "divider": {
     "component": "DividerWrapper"
+  },
+  "go-to-checkout": {
+    "component": "GoToCheckout"
   }
 }

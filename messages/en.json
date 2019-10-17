@@ -4,5 +4,6 @@
   "store/cart.items": "({itemsQuantity, plural, one {# item} other {# items}})",
   "store/cart.emptyState.title": "Your cart is empty",
   "store/cart.emptyState.message": "Add products by navigating through categories or by searching for them.",
-  "store/cart.emptyState.button": "Choose products"
+  "store/cart.emptyState.button": "Choose products",
+  "store/cart.checkout": "Checkout"
 }

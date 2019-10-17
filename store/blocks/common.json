@@ -35,5 +35,8 @@
     "props": {
       "orientation": "horizontal"
     }
+  },
+  "flex-layout.row#go-to-checkout": {
+    "children": ["go-to-checkout"]
   }
 }
