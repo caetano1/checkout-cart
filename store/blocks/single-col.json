@@ -18,16 +18,23 @@
       "flex-layout.row#product-list",
       "flex-layout.row#shipping",
       "flex-layout.row#summary",
+      "sticky-layout#go-to-checkout",
       "flex-layout.row#continue-shopping.block"
     ],
     "props": {
       "marginBottom": 6
     }
   },
+  "sticky-layout#go-to-checkout": {
+    "children": ["flex-layout.row#go-to-checkout"],
+    "props": {
+      "position": "bottom"
+    }
+  },
   "flex-layout.row#continue-shopping.block": {
     "children": ["continue-shopping"],
     "props": {
-      "marginTop": 7
+      "marginTop": 6
     }
   }
 }

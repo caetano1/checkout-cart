@@ -61,7 +61,8 @@
   "flex-layout.col#right-content": {
     "children": [
       "flex-layout.row#shipping",
-      "flex-layout.row#summary"
+      "flex-layout.row#summary",
+      "flex-layout.row#go-to-checkout"
     ],
     "props": {
       "blockClass": "sidebarContent",
