@@ -1,37 +1,33 @@
-import React, { FunctionComponent, useContext, useEffect, useRef } from 'react'
+import React, { FunctionComponent, useEffect } from 'react'
 import { OrderFormProvider, useOrderForm } from 'vtex.order-manager/OrderForm'
 import { OrderQueueProvider } from 'vtex.order-manager/OrderQueue'
 import { ExtensionPoint } from 'vtex.render-runtime'
-import { Spinner, ToastContext } from 'vtex.styleguide'
+import { Spinner } from 'vtex.styleguide'
 import { useDevice } from 'vtex.device-detector'
 
-const useToasts = (messages: Message[]) => {
-  const { showToast, toastState } = useContext(ToastContext)
-  const toastQueueRef = useRef([] as string[])
-
-  useEffect(() => {
-    toastQueueRef.current = [
-      ...messages.map(msg => msg.text),
-      ...toastQueueRef.current,
-    ]
-  }, [messages])
-
-  useEffect(() => {
-    if (!toastState.isToastVisible && toastQueueRef.current.length > 0) {
-      showToast(toastQueueRef.current.pop())
-    }
-  }, [toastState, messages])
-}
+import {
+  CartToastProvider,
+  useCartToastContext,
+} from './components/ToastContext'
 
 const CartWrapper: FunctionComponent = () => {
   const { loading, orderForm } = useOrderForm()
   const { device } = useDevice()
+  const { enqueueToasts } = useCartToastContext()
+
+  const messages =
+    (orderForm && orderForm.messages && orderForm.messages.generalMessages) ||
+    []
+
+  useEffect(() => {
+    if (!loading && messages.length > 0) {
+      enqueueToasts(messages.map((msg: Message) => msg.text))
+    }
+  }, [messages, enqueueToasts, loading])
 
   if (loading) {
     return <Spinner />
   }
-
-  useToasts(orderForm.messages.generalMessages)
 
   if (orderForm.items.length === 0) {
     return <ExtensionPoint id="empty-state" />
@@ -47,7 +43,9 @@ const CartWrapper: FunctionComponent = () => {
 const EnhancedCartWrapper = () => (
   <OrderQueueProvider>
     <OrderFormProvider>
-      <CartWrapper />
+      <CartToastProvider>
+        <CartWrapper />
+      </CartToastProvider>
     </OrderFormProvider>
   </OrderQueueProvider>
 )
