@@ -5,5 +5,6 @@
   "store/cart.emptyState.title": "Your cart is empty",
   "store/cart.emptyState.message": "Add products by navigating through categories or by searching for them.",
   "store/cart.emptyState.button": "Choose products",
-  "store/cart.checkout": "Checkout"
+  "store/cart.checkout": "Checkout",
+  "store/cart.removeToast": "Item {name} was removed from the cart"
 }

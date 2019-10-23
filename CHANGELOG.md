@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Toast when the user removes an item from the cart.
+
 ## [0.14.0] - 2019-10-18
 
 ### Changed
