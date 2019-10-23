@@ -20,7 +20,10 @@ const CartTitle: FunctionComponent = () => {
           <FormattedMessage id="store/cart.title" />
         </span>
         {showQuantity && (
-          <span className="t-heading-5 c-muted-1 t-heading-4-l">
+          <span
+            id="items-quantity"
+            className="t-heading-5 c-muted-1 t-heading-4-l"
+          >
             &nbsp;
             <FormattedMessage
               id="store/cart.items"
