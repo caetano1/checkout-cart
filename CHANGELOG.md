@@ -45,6 +45,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.11.1] - 2019-10-01
 
+### Added
+
+- `id` to the element that shows items quantity on cart's title.
+
 ### Fixed
 
 - Empty state button size and `href`.

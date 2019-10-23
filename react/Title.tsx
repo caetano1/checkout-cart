@@ -19,9 +19,12 @@ const CartTitle: FunctionComponent = () => {
         <span className="t-heading-3 c-on-base t-heading-2-l">
           <FormattedMessage id="store/cart.title" />
         </span>
+        &nbsp;
         {showQuantity && (
-          <span className="t-heading-5 c-muted-1 t-heading-4-l">
-            &nbsp;
+          <span
+            id="items-quantity"
+            className="t-heading-5 c-muted-1 t-heading-4-l"
+          >
             <FormattedMessage
               id="store/cart.items"
               values={{ itemsQuantity: items.length }}
