@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Items can now be added via query string in the format `/cart/add?sku={skuId}&qty={quantity}&seller={seller}`
+
 ## [0.15.1] - 2019-10-23
 
 ## [0.15.0] - 2019-10-23
