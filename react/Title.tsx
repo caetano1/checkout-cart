@@ -7,6 +7,7 @@ const AVAILABLE = 'available'
 const CartTitle: FunctionComponent = () => {
   const {
     orderForm: { items },
+    loading,
   } = useOrderForm()
 
   const showQuantity = items.every(
@@ -20,7 +21,7 @@ const CartTitle: FunctionComponent = () => {
           <FormattedMessage id="store/cart.title" />
         </span>
         &nbsp;
-        {showQuantity && (
+        {!loading && showQuantity && (
           <span
             id="items-quantity"
             className="t-heading-5 c-muted-1 t-heading-4-l"
