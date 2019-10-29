@@ -2,7 +2,6 @@ import React, { FunctionComponent, useEffect } from 'react'
 import { OrderFormProvider, useOrderForm } from 'vtex.order-manager/OrderForm'
 import { OrderQueueProvider } from 'vtex.order-manager/OrderQueue'
 import { ExtensionPoint } from 'vtex.render-runtime'
-import { Spinner } from 'vtex.styleguide'
 import { useDevice } from 'vtex.device-detector'
 
 import {
@@ -25,11 +24,7 @@ const CartWrapper: FunctionComponent = () => {
     }
   }, [messages, enqueueToasts, loading])
 
-  if (loading) {
-    return <Spinner />
-  }
-
-  if (orderForm.items.length === 0) {
+  if (!loading && orderForm.items.length === 0) {
     return <ExtensionPoint id="empty-state" />
   }
 
