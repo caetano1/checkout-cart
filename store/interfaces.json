@@ -51,5 +51,8 @@
   },
   "go-to-checkout": {
     "component": "GoToCheckout"
+  },
+  "store.checkout-add": {
+    "component": "AddToCartUrl"
   }
 }
