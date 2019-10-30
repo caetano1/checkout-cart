@@ -15,6 +15,7 @@ const messages = defineMessages({
 const ProductList: FunctionComponent<InjectedIntlProps> = ({ intl }) => {
   const {
     orderForm: { items },
+    loading
   } = useOrderForm()
   const { updateQuantity, removeItem } = useOrderItems()
   const { enqueueToasts } = useCartToastContext()
@@ -34,6 +35,7 @@ const ProductList: FunctionComponent<InjectedIntlProps> = ({ intl }) => {
     <ExtensionPoint
       id="product-list"
       items={items}
+      loading={loading}
       onQuantityChange={handleQuantityChange}
       onRemove={handleRemove}
     />
