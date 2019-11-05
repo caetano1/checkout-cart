@@ -16,7 +16,7 @@ const CartTitle: FunctionComponent = () => {
 
   return (
     <div>
-      <h3>
+      <h3 className="mt6 mt7-l">
         <span className="t-heading-3 c-on-base t-heading-2-l">
           <FormattedMessage id="store/cart.title" />
         </span>
