@@ -1,3 +1,11 @@
+.flexRow--sidebar {
+  margin-top: 5.84em;
+}
+
+.flexRow--goToCheckout {
+  background-color: #fff;
+}
+
 /* M, L */
 @media screen and (min-width: 40em) and (max-width: 80em) {
   .flexCol--sidebarContent {
@@ -6,24 +14,18 @@
   }
 }
 
-/* XL+ */
-@media screen and (min-width: 80em) {
-  .flexCol--sidebarContent {
-    min-width: 24em;
-    max-width: 24em;
-  }
-}
-
-.flexRow--sidebar {
-  margin-top: 5.84em;
-}
-
+/* L+ */
 @media screen and (min-width: 64em) {
   .flexRow--sidebar {
     margin-top: 7em;
   }
 }
 
-.flexRow--goToCheckout {
-  background-color: #fff;
+
+/* XL+ */
+@media screen and (min-width: 80em) {
+  .flexCol--sidebarContent {
+    min-width: 24em;
+    max-width: 24em;
+  }
 }
