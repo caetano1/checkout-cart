@@ -4,7 +4,7 @@ import { Button } from 'vtex.styleguide'
 
 const GoToCheckoutButton: FunctionComponent = () => {
   return (
-    <div className="pv3 bg-white">
+    <div>
       <Button
         id="proceed-to-checkout"
         href="/checkout/#payment"

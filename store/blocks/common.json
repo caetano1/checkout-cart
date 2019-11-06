@@ -14,14 +14,17 @@
   "flex-layout.row#shipping": {
     "children": ["shipping-wrapper"],
     "props": {
-      "marginBottom": 6
+      "marginBottom": 8
     }
   },
   "shipping-wrapper": {
     "blocks": ["shipping-calculator"]
   },
   "flex-layout.row#summary": {
-    "children": ["summary-wrapper"]
+    "children": ["summary-wrapper"],
+    "props": {
+      "marginBottom": 3
+    }
   },
   "summary-wrapper": {
     "blocks": ["checkout-summary"]
@@ -37,6 +40,11 @@
     }
   },
   "flex-layout.row#go-to-checkout": {
-    "children": ["go-to-checkout"]
+    "children": ["go-to-checkout"],
+    "props": {
+      "blockClass": "goToCheckout",
+      "paddingBottom": 4,
+      "paddingTop": 4
+    }
   }
 }
