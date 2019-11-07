@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Spacings.
+- Place of a background rule.
+
 ## [0.18.0] - 2019-10-31
 
 ### Added
