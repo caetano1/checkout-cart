@@ -22,6 +22,7 @@
     "vtex.order-manager": "0.x",
     "vtex.order-items": "0.x",
     "vtex.order-shipping": "0.x",
+    "vtex.order-coupon": "0.x",
     "vtex.flex-layout": "0.x",
     "vtex.device-detector": "0.x",
     "vtex.sticky-layout": "0.x",
