@@ -12,11 +12,7 @@ const SummaryWrapper: FunctionComponent = () => {
     orderForm: { totalizers, value },
   } = useOrderForm()
 
-  const {
-    coupon,
-    insertCoupon,
-    couponErrorKey,
-  } = useOrderCoupon()
+  const { coupon, insertCoupon } = useOrderCoupon()
 
   return (
     <ExtensionPoint
@@ -26,7 +22,6 @@ const SummaryWrapper: FunctionComponent = () => {
       total={value}
       coupon={coupon}
       insertCoupon={insertCoupon}
-      couponErrorKey={couponErrorKey}
     />
   )
 }
