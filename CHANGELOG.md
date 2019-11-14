@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.20.0] - 2019-11-14
+
 ### Removed
 
 - `couponErrorKey` prop, since it is no longer necessary.
