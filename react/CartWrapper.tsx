@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useEffect } from 'react'
-import { OrderFormProvider, useOrderForm } from 'vtex.order-manager/OrderForm'
-import { OrderQueueProvider } from 'vtex.order-manager/OrderQueue'
+import { useOrderForm } from 'vtex.order-manager/OrderForm'
 import { ExtensionPoint } from 'vtex.render-runtime'
 import { useDevice } from 'vtex.device-detector'
 
@@ -36,13 +35,9 @@ const CartWrapper: FunctionComponent = () => {
 }
 
 const EnhancedCartWrapper = () => (
-  <OrderQueueProvider>
-    <OrderFormProvider>
-      <CartToastProvider>
-        <CartWrapper />
-      </CartToastProvider>
-    </OrderFormProvider>
-  </OrderQueueProvider>
+  <CartToastProvider>
+    <CartWrapper />
+  </CartToastProvider>
 )
 
 export default EnhancedCartWrapper

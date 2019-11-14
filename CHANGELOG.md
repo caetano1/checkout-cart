@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Removed
+
+- `OrderFormProvider` and `OrderQueueProvider`, as they are now provided by `vtex.store`.
+
 ## [0.20.0] - 2019-11-14
 
 ### Removed
