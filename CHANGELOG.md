@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Removed
 
-- `couponErrorKey` prop, since its no longer necessary.
+- `couponErrorKey` prop, since it is no longer necessary.
 
 ## [0.19.0] - 2019-11-08
 
