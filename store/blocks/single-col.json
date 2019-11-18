@@ -9,7 +9,9 @@
       "flex-layout.col#single"
     ],
     "props": {
-      "marginBottom": 6
+      "marginBottom": 6,
+      "blockClass": "cartContainer",
+      "fullWidth": true
     }
   },
   "flex-layout.col#single": {

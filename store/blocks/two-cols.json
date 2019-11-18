@@ -3,7 +3,11 @@
     "children": ["flex-layout.row#two-cols"]
   },
   "flex-layout.row#two-cols": {
-    "children": ["flex-layout.col#two-cols"]
+    "children": ["flex-layout.col#two-cols"],
+    "props": {
+      "blockClass": "cartContainer",
+      "fullWidth": true
+    }
   },
   "flex-layout.col#two-cols": {
     "children": [
