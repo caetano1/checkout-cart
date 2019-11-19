@@ -5,7 +5,9 @@
   "flex-layout.row#empty-state": {
     "children": ["flex-layout.col#empty-state"],
     "props": {
-      "paddingTop": 10
+      "paddingTop": 10,
+      "blockClass": "cartContainer",
+      "fullWidth": true
     }
   },
   "flex-layout.col#empty-state": {

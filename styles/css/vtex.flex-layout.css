@@ -1,9 +1,69 @@
-.flexRow--sidebar {
-  margin-top: 5.84em;
+/* Container */
+
+.flexRow--cartContainer {
+  margin: 0 1em;
 }
+
+/* S */
+@media screen and (min-width: 39em) and (max-width: 40em) {
+  .flexRow--cartContainer {
+    margin: 0 auto;
+    width: 37em;
+  }
+}
+
+/* M */
+@media screen and (min-width: 40em) and (max-width: 61em) {
+  .flexRow--cartContainer {
+    margin: 0 1.5em;
+  }
+}
+
+@media screen and (min-width: 61em) and (max-width: 64em) {
+  .flexRow--cartContainer {
+    margin: 0 auto;
+    width: 58em;
+  }
+}
+
+/* L */
+@media screen and (min-width: 64em) and (max-width: 78em) {
+  .flexRow--cartContainer {
+    margin: 0 3em;
+  }
+}
+
+@media screen and (min-width: 78em) and (max-width: 80em) {
+  .flexRow--cartContainer {
+    margin: 0 auto;
+    width: 72em;
+  }
+}
+
+/* XL */
+@media screen and (min-width: 80em) and (max-width: 104em) {
+  .flexRow--cartContainer {
+    margin: 0 4em;
+  }
+}
+
+@media screen and (min-width: 104em) {
+  .flexRow--cartContainer {
+    margin: 0 auto;
+    width: 96em;
+  }
+}
+
+/* Go to Checkout button */
 
 .flexRow--goToCheckout {
   background-color: #fff;
+}
+
+/* Sidebar */
+
+.flexRow--sidebar {
+  margin-top: 5.84em;
 }
 
 /* M, L */
