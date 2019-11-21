@@ -1,10 +1,21 @@
-import React, { FunctionComponent } from 'react'
-import { FormattedMessage } from 'react-intl'
+import React from 'react'
+import { defineMessages, FormattedMessage } from 'react-intl'
 import { useOrderForm } from 'vtex.order-manager/OrderForm'
 
 const AVAILABLE = 'available'
 
-const CartTitle: FunctionComponent = () => {
+const messages = defineMessages({
+  label: {
+    id: 'admin/editor.cart.title',
+    defaultMessage: '',
+  },
+  title: {
+    id: 'store/cart.title',
+    defaultMessage: '',
+  },
+})
+
+const CartTitle: StorefrontFunctionComponent<Props> = ({ title }) => {
   const {
     orderForm: { items },
     loading,
@@ -18,7 +29,7 @@ const CartTitle: FunctionComponent = () => {
     <div>
       <h3 className="mt6 mt7-l">
         <span className="t-heading-3 c-on-base t-heading-2-l">
-          <FormattedMessage id="store/cart.title" />
+          <FormattedMessage id={title} />
         </span>
         &nbsp;
         {!loading && showQuantity && (
@@ -35,6 +46,14 @@ const CartTitle: FunctionComponent = () => {
       </h3>
     </div>
   )
+}
+
+interface Props {
+  title: string
+}
+
+CartTitle.schema = {
+  title: messages.label.id,
 }
 
 export default CartTitle
