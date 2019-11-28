@@ -1,9 +1,12 @@
 import React, { FunctionComponent } from 'react'
 import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl'
-import { useOrderForm } from 'vtex.order-manager/OrderForm'
-import { OrderItemsProvider, useOrderItems } from 'vtex.order-items/OrderItems'
+import { OrderForm } from 'vtex.order-manager'
+import { OrderItems } from 'vtex.order-items'
 import { ExtensionPoint } from 'vtex.render-runtime'
 import { useCartToastContext } from './components/ToastContext'
+
+const { useOrderForm } = OrderForm
+const { OrderItemsProvider, useOrderItems } = OrderItems
 
 const messages = defineMessages({
   removeToast: {
@@ -13,12 +16,10 @@ const messages = defineMessages({
 })
 
 const ProductList: FunctionComponent<InjectedIntlProps> = ({ intl }) => {
-  const {
-    orderForm: { items },
-    loading
-  } = useOrderForm()
+  const { orderForm, loading } = useOrderForm()
   const { updateQuantity, removeItem } = useOrderItems()
   const { enqueueToasts } = useCartToastContext()
+  const items = (orderForm && orderForm.items) || []
 
   const handleQuantityChange = (uniqueId: string, quantity: number) =>
     updateQuantity({ uniqueId, quantity })
@@ -26,9 +27,11 @@ const ProductList: FunctionComponent<InjectedIntlProps> = ({ intl }) => {
   const handleRemove = (uniqueId: string) => {
     removeItem({ uniqueId })
     const item = items.find((item: Item) => item.uniqueId === uniqueId)
-    enqueueToasts([
-      intl.formatMessage(messages.removeToast, { name: item.name }),
-    ])
+    if (item) {
+      enqueueToasts([
+        intl.formatMessage(messages.removeToast, { name: item.name }),
+      ])
+    }
   }
 
   return (

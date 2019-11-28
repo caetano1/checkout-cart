@@ -1,18 +1,17 @@
 import React, { FunctionComponent } from 'react'
 import { ExtensionPoint } from 'vtex.render-runtime'
-import { useOrderForm } from 'vtex.order-manager/OrderForm'
-import {
-  OrderCouponProvider,
-  useOrderCoupon,
-} from 'vtex.order-coupon/OrderCoupon'
+import { OrderForm } from 'vtex.order-manager'
+import { OrderCoupon } from 'vtex.order-coupon'
+
+const { useOrderForm } = OrderForm
+const { OrderCouponProvider, useOrderCoupon } = OrderCoupon
 
 const SummaryWrapper: FunctionComponent = () => {
-  const {
-    loading,
-    orderForm: { totalizers, value },
-  } = useOrderForm()
+  const { loading, orderForm } = useOrderForm()
 
   const { coupon, insertCoupon } = useOrderCoupon()
+  const totalizers = orderForm && orderForm.totalizers
+  const value = orderForm && orderForm.value
 
   return (
     <ExtensionPoint

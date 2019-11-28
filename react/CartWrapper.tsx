@@ -1,7 +1,9 @@
 import React, { FunctionComponent, useEffect } from 'react'
-import { useOrderForm } from 'vtex.order-manager/OrderForm'
+import { OrderForm } from 'vtex.order-manager'
 import { ExtensionPoint } from 'vtex.render-runtime'
 import { useDevice } from 'vtex.device-detector'
+
+const { useOrderForm } = OrderForm
 
 import {
   CartToastProvider,
@@ -23,7 +25,7 @@ const CartWrapper: FunctionComponent = () => {
     }
   }, [messages, enqueueToasts, loading])
 
-  if (!loading && orderForm.items.length === 0) {
+  if (!loading && (!orderForm || orderForm.items.length === 0)) {
     return <ExtensionPoint id="empty-state" />
   }
 

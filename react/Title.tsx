@@ -1,14 +1,15 @@
 import React, { FunctionComponent } from 'react'
 import { FormattedMessage } from 'react-intl'
-import { useOrderForm } from 'vtex.order-manager/OrderForm'
+import { OrderForm } from 'vtex.order-manager'
+
+const { useOrderForm } = OrderForm
 
 const AVAILABLE = 'available'
 
 const CartTitle: FunctionComponent = () => {
-  const {
-    orderForm: { items },
-    loading,
-  } = useOrderForm()
+  const { orderForm, loading } = useOrderForm()
+
+  const items = (orderForm && orderForm.items) || []
 
   const showQuantity = items.every(
     (item: Item) => item.availability === AVAILABLE
