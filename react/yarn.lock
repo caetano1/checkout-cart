@@ -5439,6 +5439,66 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
+"vtex.checkout-graphql@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.checkout-graphql@0.18.1/public/@types/vtex.checkout-graphql":
+  version "0.18.1"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.checkout-graphql@0.18.1/public/@types/vtex.checkout-graphql#9ed63fa180a3600c72ae7ae4f09afd3bc82ec3f9"
+
+"vtex.checkout-resources@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.checkout-resources@0.12.0/public/_types/react":
+  version "0.0.0"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.checkout-resources@0.12.0/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
+
+"vtex.checkout-summary@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.checkout-summary@0.12.0/public/@types/vtex.checkout-summary":
+  version "0.12.0"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.checkout-summary@0.12.0/public/@types/vtex.checkout-summary#5dedb035d8ca74927ae86efe5604e0c02e534126"
+
+"vtex.device-detector@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.device-detector@0.2.3/public/@types/vtex.device-detector":
+  version "0.2.3"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.device-detector@0.2.3/public/@types/vtex.device-detector#66c85d30306f6d7694aa04aabd10882afc38c08f"
+
+"vtex.flex-layout@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.flex-layout@0.12.1/public/@types/vtex.flex-layout":
+  version "0.12.1"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.flex-layout@0.12.1/public/@types/vtex.flex-layout#cad616e03a3aeaacb71b4a45a7eaf25d75f21b02"
+
+"vtex.order-coupon@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-coupon@0.7.0/public/@types/vtex.order-coupon":
+  version "0.7.0"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-coupon@0.7.0/public/@types/vtex.order-coupon#44ce58743eccd5c7ef5e663bbd4cd33052d51d1f"
+
+"vtex.order-items@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-items@0.5.1/public/@types/vtex.order-items":
+  version "0.5.1"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-items@0.5.1/public/@types/vtex.order-items#6a372580e5f23a32fc1b7ea7ec7fb7c0282f8bfb"
+
+"vtex.order-manager@https://marcos--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.order-manager@0.6.3+build1574959625/public/@types/vtex.order-manager":
+  version "0.6.3"
+  resolved "https://marcos--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.order-manager@0.6.3+build1574959625/public/@types/vtex.order-manager#7dbb02307dd590c585a0df659195dcbc2e724eb2"
+
+"vtex.order-shipping@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-shipping@0.2.1/public/@types/vtex.order-shipping":
+  version "0.2.1"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-shipping@0.2.1/public/@types/vtex.order-shipping#3ce7e53ce7741d15f4e5c3246a133b1e0d3cc2ba"
+
+"vtex.product-list@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.product-list@0.14.3/public/@types/vtex.product-list":
+  version "0.14.3"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.product-list@0.14.3/public/@types/vtex.product-list#1273d823e19170a69b6d7ceca8372576fd1f3482"
+
+"vtex.render-runtime@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.render-runtime@8.79.0/public/@types/vtex.render-runtime":
+  version "8.79.0"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.render-runtime@8.79.0/public/@types/vtex.render-runtime#720e67e81ed9ff32da987c5b1d3f5c77603bde70"
+
+"vtex.shipping-calculator@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.shipping-calculator@0.5.4/public/@types/vtex.shipping-calculator":
+  version "0.5.4"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.shipping-calculator@0.5.4/public/@types/vtex.shipping-calculator#80429307f000b8aeb74908ade641677c0896b86b"
+
+"vtex.sticky-layout@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.sticky-layout@0.1.4/public/@types/vtex.sticky-layout":
+  version "0.1.4"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.sticky-layout@0.1.4/public/@types/vtex.sticky-layout#0eb3c010151b10c0f9760e626339a3cc41b04752"
+
+"vtex.store-resources@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store-resources@0.37.1/public/_types/react":
+  version "0.0.0"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store-resources@0.37.1/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
+
+"vtex.styleguide@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.96.10/public/@types/vtex.styleguide":
+  version "9.96.10"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.96.10/public/@types/vtex.styleguide#96c7deb06dfcc9b7a6f9ed10382048874a6bced9"
+
 w3c-hr-time@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/w3c-hr-time/-/w3c-hr-time-1.0.1.tgz#82ac2bff63d950ea9e3189a58a65625fedf19045"
