@@ -6,5 +6,9 @@
   "store/cart.emptyState.message": "Adicione produtos navegando pelas categorias ou procurando por eles.",
   "store/cart.emptyState.button": "Escolher produtos",
   "store/cart.checkout": "Continuar",
-  "store/cart.removeToast": "O item {name} foi removido do carrinho"
+  "store/cart.removeToast": "O item {name} foi removido do carrinho",
+  "admin/editor.cart.label": "Carrinho",
+  "admin/editor.cart.title": "Título",
+  "admin/editor.cart.continueShopping": "Botão escolher mais produtos",
+  "admin/editor.cart.checkout": "Botão continuar"
 }

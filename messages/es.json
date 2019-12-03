@@ -6,5 +6,9 @@
   "store/cart.emptyState.message": "Agregue productos explorando categorías o buscándolos.",
   "store/cart.emptyState.button": "Elige productos",
   "store/cart.checkout": "Ir a Pagar",
-  "store/cart.removeToast": "El ítem {name} se ha eliminado del carrito"
+  "store/cart.removeToast": "El ítem {name} se ha eliminado del carrito",
+  "admin/editor.cart.label": "Carrito",
+  "admin/editor.cart.title": "Título",
+  "admin/editor.cart.continueShopping": "Botón seguir comprando",
+  "admin/editor.cart.checkout": "Botón ir a pagar"
 }

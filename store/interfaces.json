@@ -29,14 +29,20 @@
     "allowed": "*"
   },
   "title": {
-    "component": "Title"
+    "component": "Title",
+    "content": {
+      "$ref": "#/definitions/Title"
+    }
   },
   "product-list-wrapper": {
     "component": "ProductList",
     "allowed": ["product-list"]
   },
   "continue-shopping": {
-    "component": "ContinueShopping"
+    "component": "ContinueShopping",
+    "content": {
+      "$ref": "#/definitions/ContinueShopping"
+    }
   },
   "shipping-wrapper": {
     "component": "Shipping",
@@ -50,7 +56,10 @@
     "component": "DividerWrapper"
   },
   "go-to-checkout": {
-    "component": "GoToCheckout"
+    "component": "GoToCheckout",
+    "content": {
+      "$ref": "#/definitions/GoToCheckout"
+    }
   },
   "checkout-cart-add": {
     "component": "AddToCartUrl"

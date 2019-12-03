@@ -1,0 +1,29 @@
+{
+  "definitions": {
+    "Title": {
+      "properties": {
+        "title": {
+          "$ref": "app:vtex.native-types#/definitions/text",
+          "default": "store/cart.title"
+        }
+      },
+      "title": "title"
+    },
+    "ContinueShopping": {
+      "properties": {
+        "label": {
+          "$ref": "app:vtex.native-types#/definitions/text",
+          "default": "store/cart.continueShopping"
+        }
+      }
+    },
+    "GoToCheckout": {
+      "properties": {
+        "label": {
+          "$ref": "app:vtex.native-types#/definitions/text",
+          "default": "store/cart.checkout"
+        }
+      }
+    }
+  }
+}

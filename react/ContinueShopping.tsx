@@ -1,18 +1,30 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import { FormattedMessage, defineMessages } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 
-defineMessages({
+const messages = defineMessages({
   continueShopping: {
     defaultMessage: 'Continue Shopping',
     id: 'store/cart.continueShopping',
   },
+  label: {
+    defaultMessage: '',
+    id: 'admin/editor.cart.continueShopping',
+  },
 })
 
-const ContinueShopping: FunctionComponent = () => (
+const ContinueShopping: StorefrontFunctionComponent<Props> = ({ label }) => (
   <Button href="/" variation="secondary" block>
-    <FormattedMessage id="store/cart.continueShopping" />
+    <FormattedMessage id={label} />
   </Button>
 )
+
+interface Props {
+  label: string
+}
+
+ContinueShopping.schema = {
+  title: messages.label.id,
+}
 
 export default ContinueShopping
