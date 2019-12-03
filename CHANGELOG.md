@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Removed
+
+- `sticky-layout` from the "Go to checkout" button.
+
 ## [0.22.1] - 2019-12-03
 
 ### Fixed
