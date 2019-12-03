@@ -40,9 +40,7 @@ const AddToCartUrl: FunctionComponent = () => {
         variables: {
           items: newItems,
         },
-      })
-
-      window.location.replace('/cart')
+      }).then(() => window.location.replace('/cart'))
     }
   }, [loading])
 
