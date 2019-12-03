@@ -1,8 +1,15 @@
-import React, { FunctionComponent } from 'react'
-import { FormattedMessage } from 'react-intl'
+import React from 'react'
+import { FormattedMessage, defineMessages } from 'react-intl'
 import { Button } from 'vtex.styleguide'
 
-const GoToCheckoutButton: FunctionComponent = () => {
+const messages = defineMessages({
+  label: {
+    id: 'admin/editor.cart.checkout',
+    defaultMessage: '',
+  },
+})
+
+const GoToCheckoutButton: StorefrontFunctionComponent<Props> = ({ label }) => {
   return (
     <div>
       <Button
@@ -12,10 +19,18 @@ const GoToCheckoutButton: FunctionComponent = () => {
         size="large"
         block
       >
-        <FormattedMessage id="store/cart.checkout" />
+        <FormattedMessage id={label} />
       </Button>
     </div>
   )
+}
+
+interface Props {
+  label: string
+}
+
+GoToCheckoutButton.schema = {
+  title: messages.label.id,
 }
 
 export default GoToCheckoutButton

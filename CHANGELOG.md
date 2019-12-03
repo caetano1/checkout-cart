@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - `AddToCartUrl` not working on some devices.
 
+## [0.22.0] - 2019-12-03
+
+### Added
+
+- `schema` to title and buttons so they appear in Site Editor.
+
 ## [0.21.1] - 2019-11-19
 
 ### Added
