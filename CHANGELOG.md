@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.22.1] - 2019-12-03
+
 ### Fixed
 
 - `AddToCartUrl` not working on some devices.
