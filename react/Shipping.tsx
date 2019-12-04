@@ -9,6 +9,7 @@ import {
 const ShippingWrapper: FunctionComponent = () => {
   const { loading } = useOrderForm()
   const {
+    canEditData,
     countries,
     deliveryOptions,
     insertAddress,
@@ -20,6 +21,7 @@ const ShippingWrapper: FunctionComponent = () => {
     <ExtensionPoint
       id="shipping-calculator"
       loading={loading}
+      canEditData={canEditData}
       countries={countries}
       deliveryOptions={deliveryOptions}
       insertAddress={insertAddress}

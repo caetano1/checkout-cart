@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.22.2] - 2019-12-04
 
+### Added
+
+- `canEditData` prop to `shipping-calculator`.
+
 ### Removed
 
 - `sticky-layout` from the "Go to checkout" button.
