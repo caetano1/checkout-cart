@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- `canEditData` prop to `shipping-calculator`.
+
 ## [0.22.2] - 2019-12-04
 
 ### Removed
