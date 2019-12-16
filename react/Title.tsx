@@ -2,7 +2,7 @@ import React from 'react'
 import { defineMessages, FormattedMessage } from 'react-intl'
 import { useOrderForm } from 'vtex.order-manager/OrderForm'
 
-const AVAILABLE = 'available'
+import { AVAILABLE } from './consts'
 
 const messages = defineMessages({
   label: {
