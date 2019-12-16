@@ -6,7 +6,7 @@ import {
   useOrderShipping,
 } from 'vtex.order-shipping/OrderShipping'
 
-import { AVAILABLE } from './consts'
+import { AVAILABLE } from './constants'
 
 const ShippingWrapper: FunctionComponent = () => {
   const {
