@@ -6,8 +6,14 @@ import {
   useOrderShipping,
 } from 'vtex.order-shipping/OrderShipping'
 
+import { AVAILABLE } from './constants'
+
 const ShippingWrapper: FunctionComponent = () => {
-  const { loading } = useOrderForm()
+  const {
+    loading,
+    orderForm: { items },
+  } = useOrderForm()
+
   const {
     canEditData,
     countries,
@@ -17,6 +23,14 @@ const ShippingWrapper: FunctionComponent = () => {
     selectedAddress,
   } = useOrderShipping()
 
+  const numberOfUnavailableItems = items.reduce(
+    (numberOfUnavailableItems: number, item: Item) =>
+      item.availability !== AVAILABLE
+        ? numberOfUnavailableItems + 1
+        : numberOfUnavailableItems,
+    0
+  )
+
   return (
     <ExtensionPoint
       id="shipping-calculator"
@@ -25,6 +39,8 @@ const ShippingWrapper: FunctionComponent = () => {
       countries={countries}
       deliveryOptions={deliveryOptions}
       insertAddress={insertAddress}
+      numberOfItems={items.length}
+      numberOfUnavailableItems={numberOfUnavailableItems}
       selectDeliveryOption={selectDeliveryOption}
       selectedAddress={selectedAddress}
     />
