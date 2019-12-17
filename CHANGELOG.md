@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.24.0] - 2019-12-17
+
 ### Added
 
 - `numberOfUnavailableItems` and `numberOfItems` to `shipping-calculator` in order to show a proper warnings.
