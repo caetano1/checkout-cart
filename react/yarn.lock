@@ -5444,6 +5444,66 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
+"vtex.checkout-graphql@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.checkout-graphql@0.20.1/public/@types/vtex.checkout-graphql":
+  version "0.20.1"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.checkout-graphql@0.20.1/public/@types/vtex.checkout-graphql#ce2e4a6db6f1524ad4f0986fd10352fd8d2c29f4"
+
+"vtex.checkout-resources@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.checkout-resources@0.14.0/public/_types/react":
+  version "0.0.0"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.checkout-resources@0.14.0/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
+
+"vtex.checkout-summary@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.checkout-summary@0.14.1/public/@types/vtex.checkout-summary":
+  version "0.14.1"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.checkout-summary@0.14.1/public/@types/vtex.checkout-summary#19e78cac4ab10984b5527685b580c5160eabe42d"
+
+"vtex.device-detector@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.device-detector@0.2.4/public/@types/vtex.device-detector":
+  version "0.2.4"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.device-detector@0.2.4/public/@types/vtex.device-detector#bdf7ba78ba34e4ada63cca2bdf56e1674da068b9"
+
+"vtex.flex-layout@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.flex-layout@0.13.1/public/@types/vtex.flex-layout":
+  version "0.13.1"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.flex-layout@0.13.1/public/@types/vtex.flex-layout#e6fce5cc49b7b6ba79abcbff696a24d3adf3eeb9"
+
+"vtex.native-types@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.native-types@0.5.4/public/@types/vtex.native-types":
+  version "0.5.4"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.native-types@0.5.4/public/@types/vtex.native-types#ab000895205344dc370ed256928566198a668279"
+
+"vtex.order-coupon@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-coupon@0.7.0/public/@types/vtex.order-coupon":
+  version "0.7.0"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-coupon@0.7.0/public/@types/vtex.order-coupon#44ce58743eccd5c7ef5e663bbd4cd33052d51d1f"
+
+"vtex.order-items@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-items@0.5.1/public/@types/vtex.order-items":
+  version "0.5.1"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-items@0.5.1/public/@types/vtex.order-items#6a372580e5f23a32fc1b7ea7ec7fb7c0282f8bfb"
+
+"vtex.order-manager@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-manager@0.6.8/public/@types/vtex.order-manager":
+  version "0.6.8"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-manager@0.6.8/public/@types/vtex.order-manager#ea92f153b7aaa230eb54d316e4feddaaafabeba1"
+
+"vtex.order-shipping@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-shipping@0.3.0/public/@types/vtex.order-shipping":
+  version "0.3.0"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-shipping@0.3.0/public/@types/vtex.order-shipping#1f677d61ad1399364c1521dd28aef006995f1de3"
+
+"vtex.product-list@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.product-list@0.15.2/public/@types/vtex.product-list":
+  version "0.15.2"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.product-list@0.15.2/public/@types/vtex.product-list#0b022499400355ab4e7b8522643c98576501f17d"
+
+"vtex.render-runtime@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.render-runtime@8.87.2/public/@types/vtex.render-runtime":
+  version "8.87.2"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.render-runtime@8.87.2/public/@types/vtex.render-runtime#7b9f81a414398bf750e7cb0f634a2b8ff151ab9e"
+
+"vtex.shipping-calculator@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.shipping-calculator@0.8.0/public/@types/vtex.shipping-calculator":
+  version "0.8.0"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.shipping-calculator@0.8.0/public/@types/vtex.shipping-calculator#ab8df0f84262a35aca66d228ab10c297babfaad6"
+
+"vtex.store-resources@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store-resources@0.39.1/public/_types/react":
+  version "0.0.0"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store-resources@0.39.1/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
+
+"vtex.styleguide@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.103.4/public/@types/vtex.styleguide":
+  version "9.103.4"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.103.4/public/@types/vtex.styleguide#639f6ec2985497017549b0a5d0270541c7aa54cc"
+
 w3c-hr-time@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/w3c-hr-time/-/w3c-hr-time-1.0.1.tgz#82ac2bff63d950ea9e3189a58a65625fedf19045"
