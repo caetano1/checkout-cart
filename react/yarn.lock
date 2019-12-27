@@ -5886,9 +5886,9 @@ verror@1.10.0:
   version "0.0.0"
   resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.store-resources@0.39.1/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
 
-"vtex.styleguide@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.103.4/public/@types/vtex.styleguide":
-  version "9.103.4"
-  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.103.4/public/@types/vtex.styleguide#639f6ec2985497017549b0a5d0270541c7aa54cc"
+"vtex.styleguide@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.103.3/public/@types/vtex.styleguide":
+  version "9.103.3"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.styleguide@9.103.3/public/@types/vtex.styleguide#0d6701f66dbb33833039b31255224bfab122e51b"
 
 w3c-hr-time@^1.0.1:
   version "1.0.1"
