@@ -42,7 +42,7 @@ const AddToCartUrl: FunctionComponent = () => {
         },
       }).then(() => window.location.replace('/cart'))
     }
-  }, [loading])
+  }, [addToCart, loading])
 
   return <div />
 }

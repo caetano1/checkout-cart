@@ -3,6 +3,7 @@ import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl'
 import { OrderForm } from 'vtex.order-manager'
 import { OrderItems } from 'vtex.order-items'
 import { ExtensionPoint } from 'vtex.render-runtime'
+
 import { useCartToastContext } from './components/ToastContext'
 
 const { useOrderForm } = OrderForm

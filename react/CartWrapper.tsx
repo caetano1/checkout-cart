@@ -4,12 +4,12 @@ import { OrderForm } from 'vtex.order-manager'
 import { ExtensionPoint } from 'vtex.render-runtime'
 import { useDevice } from 'vtex.device-detector'
 
-const { useOrderForm } = OrderForm
-
 import {
   CartToastProvider,
   useCartToastContext,
 } from './components/ToastContext'
+
+const { useOrderForm } = OrderForm
 
 const messages = defineMessages({
   label: {
