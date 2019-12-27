@@ -3,6 +3,7 @@ import { defineMessages } from 'react-intl'
 import { OrderForm } from 'vtex.order-manager'
 import { ExtensionPoint } from 'vtex.render-runtime'
 import { useDevice } from 'vtex.device-detector'
+import { Message } from 'vtex.checkout-graphql'
 
 import {
   CartToastProvider,

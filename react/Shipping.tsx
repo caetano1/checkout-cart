@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react'
 import { ExtensionPoint } from 'vtex.render-runtime'
 import { OrderForm } from 'vtex.order-manager'
 import { OrderShipping } from 'vtex.order-shipping'
+import { Item } from 'vtex.checkout-graphql'
 
 import { AVAILABLE } from './constants'
 

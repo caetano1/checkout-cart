@@ -1,6 +1,7 @@
 import React from 'react'
 import { defineMessages, FormattedMessage } from 'react-intl'
 import { OrderForm } from 'vtex.order-manager'
+import { Item } from 'vtex.checkout-graphql'
 
 import { AVAILABLE } from './constants'
 
