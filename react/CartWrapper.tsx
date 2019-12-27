@@ -1,8 +1,10 @@
 import React, { FunctionComponent, useEffect } from 'react'
 import { defineMessages } from 'react-intl'
-import { useOrderForm } from 'vtex.order-manager/OrderForm'
+import { OrderForm } from 'vtex.order-manager'
 import { ExtensionPoint } from 'vtex.render-runtime'
 import { useDevice } from 'vtex.device-detector'
+
+const { useOrderForm } = OrderForm
 
 import {
   CartToastProvider,
