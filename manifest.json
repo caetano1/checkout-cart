@@ -1,7 +1,7 @@
 {
   "vendor": "vtex",
   "name": "checkout-cart",
-  "version": "0.24.2",
+  "version": "0.24.3",
   "title": "Checkout Cart",
   "description": "Checkout Cart",
   "defaultLocale": "pt-BR",
@@ -27,8 +27,7 @@
     "vtex.device-detector": "0.x",
     "vtex.checkout-resources": "0.x",
     "vtex.store-resources": "0.x",
-    "vtex.native-types": "0.x",
-    "vtex.checkout-graphql": "0.x"
+    "vtex.native-types": "0.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }
