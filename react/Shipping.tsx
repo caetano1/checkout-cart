@@ -1,12 +1,13 @@
 import React, { FunctionComponent } from 'react'
 import { ExtensionPoint } from 'vtex.render-runtime'
-import { useOrderForm } from 'vtex.order-manager/OrderForm'
-import {
-  OrderShippingProvider,
-  useOrderShipping,
-} from 'vtex.order-shipping/OrderShipping'
+import { OrderForm } from 'vtex.order-manager'
+import { OrderShipping } from 'vtex.order-shipping'
+import { Item } from 'vtex.checkout-graphql'
 
 import { AVAILABLE } from './constants'
+
+const { useOrderForm } = OrderForm
+const { OrderShippingProvider, useOrderShipping } = OrderShipping
 
 const ShippingWrapper: FunctionComponent = () => {
   const {

@@ -9,7 +9,7 @@
     "messages": "1.x",
     "store": "0.x",
     "react": "3.x",
-    "styles": "1.x",
+    "styles": "2.x",
     "docs": "0.x"
   },
   "mustUpdateAt": "2019-04-02",
@@ -27,7 +27,8 @@
     "vtex.device-detector": "0.x",
     "vtex.checkout-resources": "0.x",
     "vtex.store-resources": "0.x",
-    "vtex.native-types": "0.x"
+    "vtex.native-types": "0.x",
+    "vtex.checkout-graphql": "0.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

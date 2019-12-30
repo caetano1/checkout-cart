@@ -1,9 +1,14 @@
 import React, { FunctionComponent } from 'react'
 import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl'
-import { useOrderForm } from 'vtex.order-manager/OrderForm'
-import { OrderItemsProvider, useOrderItems } from 'vtex.order-items/OrderItems'
+import { OrderForm } from 'vtex.order-manager'
+import { OrderItems } from 'vtex.order-items'
 import { ExtensionPoint } from 'vtex.render-runtime'
+import { Item } from 'vtex.checkout-graphql'
+
 import { useCartToastContext } from './components/ToastContext'
+
+const { useOrderForm } = OrderForm
+const { OrderItemsProvider, useOrderItems } = OrderItems
 
 const messages = defineMessages({
   removeToast: {
@@ -15,7 +20,7 @@ const messages = defineMessages({
 const ProductList: FunctionComponent<InjectedIntlProps> = ({ intl }) => {
   const {
     orderForm: { items },
-    loading
+    loading,
   } = useOrderForm()
   const { updateQuantity, removeItem } = useOrderItems()
   const { enqueueToasts } = useCartToastContext()

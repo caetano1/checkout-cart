@@ -1,8 +1,11 @@
 import React from 'react'
 import { defineMessages, FormattedMessage } from 'react-intl'
-import { useOrderForm } from 'vtex.order-manager/OrderForm'
+import { OrderForm } from 'vtex.order-manager'
+import { Item } from 'vtex.checkout-graphql'
 
 import { AVAILABLE } from './constants'
+
+const { useOrderForm } = OrderForm
 
 const messages = defineMessages({
   label: {

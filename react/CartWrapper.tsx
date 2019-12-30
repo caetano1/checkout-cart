@@ -1,13 +1,16 @@
 import React, { FunctionComponent, useEffect } from 'react'
 import { defineMessages } from 'react-intl'
-import { useOrderForm } from 'vtex.order-manager/OrderForm'
+import { OrderForm } from 'vtex.order-manager'
 import { ExtensionPoint } from 'vtex.render-runtime'
 import { useDevice } from 'vtex.device-detector'
+import { Message } from 'vtex.checkout-graphql'
 
 import {
   CartToastProvider,
   useCartToastContext,
 } from './components/ToastContext'
+
+const { useOrderForm } = OrderForm
 
 const messages = defineMessages({
   label: {
