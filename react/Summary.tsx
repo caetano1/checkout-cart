@@ -9,10 +9,14 @@ const { OrderCouponProvider, useOrderCoupon } = OrderCoupon
 const SummaryWrapper: FunctionComponent = () => {
   const {
     loading,
-    orderForm: { totalizers, value },
+    orderForm: {
+      totalizers,
+      value,
+      marketingData: { coupon },
+    },
   } = useOrderForm()
 
-  const { coupon, insertCoupon } = useOrderCoupon()
+  const { insertCoupon } = useOrderCoupon()
 
   return (
     <ExtensionPoint
