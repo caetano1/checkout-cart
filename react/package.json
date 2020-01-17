@@ -49,5 +49,5 @@
     "vtex.shipping-calculator": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.shipping-calculator@0.8.0/public/@types/vtex.shipping-calculator",
     "vtex.order-coupon": "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.order-coupon@0.7.0/public/@types/vtex.order-coupon"
   },
-  "version": "0.24.3"
+  "version": "0.24.4"
 }
