@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.24.5] - 2020-01-22
+
 ### Changed
 
 - "Go to checkout" button is now a sticky footer on small screens.
