@@ -1,9 +1,17 @@
-import React, { FunctionComponent, useEffect } from 'react'
+import { FunctionComponent, useEffect } from 'react'
 import { parse } from 'query-string'
-import { map } from 'ramda'
-import { useMutation, useQuery } from 'react-apollo'
-import { addToCart as AddToCart } from 'vtex.checkout-resources/Mutations'
-import { orderForm as OrderForm } from 'vtex.store-resources/Queries'
+import { useQuery } from 'react-apollo'
+import StoreOrderFormQuery from 'vtex.store-resources/QueryOrderForm'
+import CheckoutOrderFormQuery from 'vtex.checkout-resources/QueryOrderForm'
+import { useOrderItems } from 'vtex.order-items/OrderItems'
+
+const orderFormOptimizationEnabled =
+  window.__RUNTIME__.settings?.['vtex.store']?.enableOrderFormOptimization ??
+  false
+
+const OrderFormQuery = orderFormOptimizationEnabled
+  ? CheckoutOrderFormQuery
+  : StoreOrderFormQuery
 
 const enforceArray = (x: any) => {
   if (!x) {
@@ -13,38 +21,45 @@ const enforceArray = (x: any) => {
 }
 
 const AddToCartUrl: FunctionComponent = () => {
-  const [addToCart] = useMutation(AddToCart)
+  const { addItem } = useOrderItems()
 
   // This ensures the checkout cookie exists
-  const { loading } = useQuery(OrderForm, { ssr: false })
+  const { loading } = useQuery(OrderFormQuery, { ssr: false })
 
   useEffect(() => {
-    if (!loading) {
-      const { sku, seller, qty } = map(enforceArray, {
-        sku: undefined,
-        seller: undefined,
-        qty: undefined,
-        ...parse(window.location && window.location.search),
-      })
-
-      const newItems = []
-      for (let i = 0; i < sku.length; i++) {
-        newItems.push({
-          id: sku[i],
-          seller: seller[i] || 1,
-          quantity: qty[i] || 1,
-        })
-      }
-
-      addToCart({
-        variables: {
-          items: newItems,
-        },
-      }).then(() => window.location.replace('/cart'))
+    if (loading) {
+      return
     }
-  }, [addToCart, loading])
 
-  return <div />
+    // parses all the query string parameters (in form of "sku=123,seller=1,qty=2")
+    // and group them by SKU, to be added to the cart later.
+    const { sku, seller, qty } = Object.entries({
+      sku: undefined,
+      seller: undefined,
+      qty: undefined,
+      ...parse(window.location?.search),
+    })
+      .map(([key, value]) => [key, enforceArray(value)] as const)
+      .reduce<{ sku: string[]; seller: number[]; qty: number[] }>(
+        (obj, [key, value]) => ({ ...obj, [key]: value }),
+        { sku: [], seller: [], qty: [] }
+      )
+
+    const newItems = []
+    for (let i = 0; i < sku.length; i++) {
+      newItems.push({
+        id: sku[i],
+        seller: seller[i] || 1,
+        quantity: qty[i] || 1,
+      })
+    }
+
+    addItem(newItems)
+
+    window.location.replace('/cart')
+  }, [addItem, loading])
+
+  return null
 }
 
 export default AddToCartUrl
