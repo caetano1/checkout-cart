@@ -19,6 +19,10 @@ const messages = defineMessages({
   },
 })
 
+const messagesFilter = (message: Message | null): message is Message => {
+  return message != null
+}
+
 const CartWrapper: FunctionComponent = () => {
   const { loading, orderForm } = useOrderForm()
   const { device } = useDevice()
@@ -28,7 +32,9 @@ const CartWrapper: FunctionComponent = () => {
 
   useEffect(() => {
     if (!loading && orderFormMessages.length > 0) {
-      enqueueToasts(orderFormMessages.map((msg: Message) => msg.text))
+      enqueueToasts(
+        orderFormMessages.filter(messagesFilter).map((msg) => msg.text!)
+      )
     }
   }, [orderFormMessages, enqueueToasts, loading])
 
