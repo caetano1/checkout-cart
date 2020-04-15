@@ -33,7 +33,7 @@ const CartWrapper: FunctionComponent = () => {
   useEffect(() => {
     if (!loading && orderFormMessages.length > 0) {
       enqueueToasts(
-        orderFormMessages.filter(messagesFilter).map((msg) => msg.text!)
+        orderFormMessages.filter(messagesFilter).map(msg => msg.text!)
       )
     }
   }, [orderFormMessages, enqueueToasts, loading])
