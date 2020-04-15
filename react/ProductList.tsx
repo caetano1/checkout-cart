@@ -30,9 +30,9 @@ const ProductList: FunctionComponent<InjectedIntlProps> = ({ intl }) => {
 
   const handleRemove = (uniqueId: string) => {
     removeItem({ uniqueId })
-    const item = items.find((item: Item) => item.uniqueId === uniqueId)
+    const foundItem = items.find((item: Item) => item.uniqueId === uniqueId)
     enqueueToasts([
-      intl.formatMessage(messages.removeToast, { name: item.name }),
+      intl.formatMessage(messages.removeToast, { name: foundItem!.name }),
     ])
   }
 

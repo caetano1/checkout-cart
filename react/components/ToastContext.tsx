@@ -22,13 +22,13 @@ export const CartToastProvider: FunctionComponent = ({ children }) => {
   useEffect(() => {
     if (!toastState.isToastVisible && toastQueue.length > 0) {
       showToast(toastQueue[0])
-      setToastQueue(queue => queue.slice(1))
+      setToastQueue((queue) => queue.slice(1))
     }
   }, [showToast, toastState.isToastVisible, toastQueue])
 
   const enqueueToasts = useCallback(
     (toasts: Toast[]) => {
-      setToastQueue(queue => [...queue, ...toasts])
+      setToastQueue((queue) => [...queue, ...toasts])
     },
     [setToastQueue]
   )

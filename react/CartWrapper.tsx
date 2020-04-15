@@ -24,15 +24,13 @@ const CartWrapper: FunctionComponent = () => {
   const { device } = useDevice()
   const { enqueueToasts } = useCartToastContext()
 
-  const messages =
-    (orderForm && orderForm.messages && orderForm.messages.generalMessages) ||
-    []
+  const orderFormMessages = orderForm?.messages?.generalMessages || []
 
   useEffect(() => {
-    if (!loading && messages.length > 0) {
-      enqueueToasts(messages.map((msg: Message) => msg.text))
+    if (!loading && orderFormMessages.length > 0) {
+      enqueueToasts(orderFormMessages.map((msg: Message) => msg.text))
     }
-  }, [messages, enqueueToasts, loading])
+  }, [orderFormMessages, enqueueToasts, loading])
 
   if (!loading && orderForm.items.length === 0) {
     return <ExtensionPoint id="empty-state" />
