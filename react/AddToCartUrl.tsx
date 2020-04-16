@@ -13,7 +13,7 @@ const OrderFormQuery = orderFormOptimizationEnabled
   ? CheckoutOrderFormQuery
   : StoreOrderFormQuery
 
-const enforceArray = (x: any) => {
+const enforceArray = <T extends any>(x: T | T[] | undefined) => {
   if (!x) {
     return []
   }
