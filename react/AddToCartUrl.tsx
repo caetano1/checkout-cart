@@ -4,6 +4,7 @@ import { useQuery } from 'react-apollo'
 import StoreOrderFormQuery from 'vtex.store-resources/QueryOrderForm'
 import CheckoutOrderFormQuery from 'vtex.checkout-resources/QueryOrderForm'
 import { useOrderItems } from 'vtex.order-items/OrderItems'
+import { useRuntime } from 'vtex.render-runtime'
 
 const orderFormOptimizationEnabled =
   window.__RUNTIME__.settings?.['vtex.store']?.enableOrderFormOptimization ??
@@ -22,6 +23,7 @@ const enforceArray = <T extends any>(x: T | T[] | undefined) => {
 
 const AddToCartUrl: FunctionComponent = () => {
   const { addItem } = useOrderItems()
+  const { navigate } = useRuntime()
 
   // This ensures the checkout cookie exists
   const { loading } = useQuery(OrderFormQuery, { ssr: false })
@@ -54,8 +56,8 @@ const AddToCartUrl: FunctionComponent = () => {
 
     addItem(newItems)
 
-    window.location.replace('/cart')
-  }, [addItem, loading])
+    navigate({ page: 'store.checkout.cart', replace: true })
+  }, [addItem, loading, navigate])
 
   return null
 }
