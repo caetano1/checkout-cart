@@ -25,10 +25,8 @@ const ShippingWrapper: FunctionComponent = () => {
   } = useOrderShipping()
 
   const numberOfUnavailableItems = items.reduce(
-    (numberOfUnavailableItems: number, item: Item) =>
-      item.availability !== AVAILABLE
-        ? numberOfUnavailableItems + 1
-        : numberOfUnavailableItems,
+    (countedItems: number, item: Item) =>
+      item.availability !== AVAILABLE ? countedItems + 1 : countedItems,
     0
   )
 

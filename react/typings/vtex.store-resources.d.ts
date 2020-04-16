@@ -3,3 +3,10 @@ declare module 'vtex.store-resources/Queries' {
 
   export const orderForm: DocumentNode
 }
+
+declare module 'vtex.store-resources/QueryOrderForm' {
+  import { DocumentNode } from 'graphql'
+
+  const document: DocumentNode
+  export = document
+}

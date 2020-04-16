@@ -1,5 +1,6 @@
-declare module 'vtex.checkout-resources/Mutations' {
+declare module 'vtex.checkout-resources/QueryOrderForm' {
   import { DocumentNode } from 'graphql'
 
-  export const addToCart: DocumentNode
+  const document: DocumentNode
+  export = document
 }
