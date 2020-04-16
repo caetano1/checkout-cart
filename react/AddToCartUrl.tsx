@@ -38,12 +38,10 @@ const AddToCartUrl: FunctionComponent = () => {
       seller: undefined,
       qty: undefined,
       ...parse(window.location?.search),
-    })
-      .map(([key, value]) => [key, enforceArray(value)] as const)
-      .reduce<{ sku: string[]; seller: number[]; qty: number[] }>(
-        (obj, [key, value]) => ({ ...obj, [key]: value }),
-        { sku: [], seller: [], qty: [] }
-      )
+    }).reduce<{ sku: string[]; seller: number[]; qty: number[] }>(
+      (obj, [key, value]) => ({ ...obj, [key]: enforceArray(value) }),
+      { sku: [], seller: [], qty: [] }
+    )
 
     const newItems = []
     for (let i = 0; i < sku.length; i++) {
