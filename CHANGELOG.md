@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Interface `checkout-cartman` and Extension Point so Cartman can inject itself in the Cart page.
 
 ## [0.24.6] - 2020-04-16
 ### Changed
