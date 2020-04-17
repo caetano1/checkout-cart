@@ -51,6 +51,7 @@ const CartWrapper: FunctionComponent = () => {
 
 const EnhancedCartWrapper: StorefrontFunctionComponent = () => (
   <CartToastProvider>
+    <ExtensionPoint id="checkout-cartman" />
     <CartWrapper />
   </CartToastProvider>
 )

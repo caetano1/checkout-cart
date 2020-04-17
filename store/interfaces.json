@@ -4,7 +4,8 @@
     "allowed": [
       "checkout-cart-single-col",
       "checkout-cart-two-cols",
-      "empty-state"
+      "empty-state",
+      "checkout-cartman"
     ]
   },
   "empty-state": {
@@ -63,5 +64,9 @@
   },
   "checkout-cart-add": {
     "component": "AddToCartUrl"
+  },
+  "checkout-cartman": {
+    "component": "*",
+    "render": "lazy"
   }
 }
