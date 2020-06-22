@@ -1,5 +1,4 @@
 import { FunctionComponent, useEffect } from 'react'
-import { parse } from 'query-string'
 import { useQuery } from 'react-apollo'
 import StoreOrderFormQuery from 'vtex.store-resources/QueryOrderForm'
 import CheckoutOrderFormQuery from 'vtex.checkout-resources/QueryOrderForm'
@@ -14,13 +13,6 @@ const OrderFormQuery = orderFormOptimizationEnabled
   ? CheckoutOrderFormQuery
   : StoreOrderFormQuery
 
-const enforceArray = <T extends any>(x: T | T[] | undefined) => {
-  if (!x) {
-    return []
-  }
-  return Array.isArray(x) ? x : [x]
-}
-
 const AddToCartUrl: FunctionComponent = () => {
   const { addItem } = useOrderItems()
   const { navigate } = useRuntime()
@@ -33,28 +25,29 @@ const AddToCartUrl: FunctionComponent = () => {
       return
     }
 
-    // parses all the query string parameters (in form of "sku=123,seller=1,qty=2")
-    // and group them by SKU, to be added to the cart later.
-    const { sku, seller, qty } = Object.entries({
-      sku: undefined,
-      seller: undefined,
-      qty: undefined,
-      ...parse(window.location?.search),
-    }).reduce<{ sku: string[]; seller: number[]; qty: number[] }>(
-      (obj, [key, value]) => ({ ...obj, [key]: enforceArray(value) }),
-      { sku: [], seller: [], qty: [] }
-    )
+    const urlSearchParams = new URLSearchParams(window.location?.search)
 
-    const newItems = []
-    for (let i = 0; i < sku.length; i++) {
-      newItems.push({
-        id: sku[i],
-        seller: seller[i] || 1,
-        quantity: qty[i] || 1,
-      })
+    const skuValues = urlSearchParams.getAll('sku')
+    let qtyValues = urlSearchParams.getAll('qty')
+    let sellerValues = urlSearchParams.getAll('seller')
+
+    if (qtyValues.length < skuValues.length) {
+      qtyValues = skuValues.map((_, index) => qtyValues[index] ?? '1')
     }
 
-    addItem(newItems)
+    if (sellerValues.length < skuValues.length) {
+      sellerValues = skuValues.map((_, index) => sellerValues[index] ?? '1')
+    }
+
+    const itemsToAdd = skuValues.map((sku, index) => ({
+      id: sku,
+      seller: parseInt(sellerValues[index], 10),
+      quantity: parseInt(qtyValues[index], 10),
+    }))
+
+    if (itemsToAdd.length > 0) {
+      addItem(itemsToAdd)
+    }
 
     navigate({ page: 'store.checkout.cart', replace: true })
   }, [addItem, loading, navigate])
