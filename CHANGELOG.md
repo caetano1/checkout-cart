@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [0.25.2] - 2020-07-14
 ### Fixed
 - Use `navigate` from `vtex.render-runtime` when on `vtex.checkout@2.x` major.
 
