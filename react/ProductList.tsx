@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useCallback } from 'react'
 import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl'
 import { OrderForm } from 'vtex.order-manager'
 import { OrderItems } from 'vtex.order-items'
@@ -25,16 +25,21 @@ const ProductList: FunctionComponent<InjectedIntlProps> = ({ intl }) => {
   const { updateQuantity, removeItem } = useOrderItems()
   const { enqueueToasts } = useCartToastContext()
 
-  const handleQuantityChange = (uniqueId: string, quantity: number) =>
-    updateQuantity({ uniqueId, quantity })
+  const handleQuantityChange = useCallback(
+    (uniqueId: string, quantity: number) =>
+      updateQuantity({ uniqueId, quantity }),
+    [updateQuantity]
+  )
 
-  const handleRemove = (uniqueId: string) => {
-    removeItem({ uniqueId })
-    const foundItem = items.find((item: Item) => item.uniqueId === uniqueId)
-    enqueueToasts([
-      intl.formatMessage(messages.removeToast, { name: foundItem!.name }),
-    ])
-  }
+  const handleRemove = useCallback(
+    (uniqueId: string, item: Item) => {
+      removeItem({ uniqueId })
+      enqueueToasts([
+        intl.formatMessage(messages.removeToast, { name: item.name }),
+      ])
+    },
+    [removeItem, enqueueToasts, intl]
+  )
 
   return (
     <ExtensionPoint

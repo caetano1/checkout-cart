@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect } from 'react'
+import React, { FunctionComponent, useEffect, memo } from 'react'
 import { defineMessages } from 'react-intl'
 import { OrderForm } from 'vtex.order-manager'
 import { ExtensionPoint } from 'vtex.render-runtime'
@@ -60,4 +60,4 @@ EnhancedCartWrapper.schema = {
   title: messages.label.id,
 }
 
-export default EnhancedCartWrapper
+export default memo(EnhancedCartWrapper)
