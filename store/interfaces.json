@@ -5,7 +5,8 @@
       "checkout-cart-single-col",
       "checkout-cart-two-cols",
       "empty-state",
-      "checkout-cartman"
+      "checkout-cartman",
+      "one-click-buy"
     ]
   },
   "empty-state": {
@@ -68,5 +69,16 @@
   "checkout-cartman": {
     "component": "*",
     "render": "lazy"
+  },
+  "one-click-buy": {
+    "component": "*",
+    "render": "lazy"
+  },
+  "one-click-buy-wrapper": {
+    "component": "OneClickBuyWrapper",
+    "render": "lazy",
+    "allowed": [
+      "one-click-buy"
+    ]
   }
 }
