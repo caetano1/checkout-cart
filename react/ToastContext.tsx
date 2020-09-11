@@ -52,3 +52,5 @@ export const useCartToastContext = () => {
 
   return context
 }
+
+export default { useCartToastContext }
