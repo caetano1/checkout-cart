@@ -44,5 +44,5 @@
     "vtex.store-resources": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.68.0/public/_types/react",
     "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.128.1/public/@types/vtex.styleguide"
   },
-  "version": "0.26.0"
+  "version": "0.27.0"
 }
