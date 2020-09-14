@@ -6,7 +6,7 @@ import { ExtensionPoint } from 'vtex.render-runtime'
 import { Item } from 'vtex.checkout-graphql'
 import { PixelContext } from 'vtex.pixel-manager'
 
-import { useCartToastContext } from './components/ToastContext'
+import { useCartToastContext } from './ToastContext'
 import { mapCartItemToPixel } from './utils/pixel'
 
 const { usePixel } = PixelContext

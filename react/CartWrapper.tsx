@@ -6,10 +6,7 @@ import { useDevice } from 'vtex.device-detector'
 import { Message } from 'vtex.checkout-graphql'
 import { PixelContext } from 'vtex.pixel-manager'
 
-import {
-  CartToastProvider,
-  useCartToastContext,
-} from './components/ToastContext'
+import { CartToastProvider, useCartToastContext } from './ToastContext'
 
 const { usePixel } = PixelContext
 const { useOrderForm } = OrderForm
