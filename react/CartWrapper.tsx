@@ -5,6 +5,7 @@ import { ExtensionPoint } from 'vtex.render-runtime'
 import { useDevice } from 'vtex.device-detector'
 import { Message } from 'vtex.checkout-graphql'
 import { PixelContext } from 'vtex.pixel-manager'
+import { useSplunk } from 'vtex.checkout-splunk'
 
 import { CartToastProvider, useCartToastContext } from './ToastContext'
 
@@ -31,6 +32,30 @@ const CartWrapper: FunctionComponent = () => {
   const orderFormMessages = orderForm?.messages?.generalMessages || []
 
   const cartEventFiredRef = useRef(false)
+
+  const { logKpiEvent } = useSplunk()
+
+  const prevOrderFormId = useRef<string | null>(null)
+
+  useEffect(() => {
+    if (loading || prevOrderFormId.current === orderForm.id) {
+      return
+    }
+
+    prevOrderFormId.current = orderForm.id
+
+    logKpiEvent({
+      level: 'Important',
+      type: 'Info',
+      workflowType: 'checkout',
+      workflowInstance: 'checkout-cart',
+      event: {
+        name: 'cartPageView',
+        description: 'Cart page accessed',
+        orderFormId: orderForm.id,
+      },
+    })
+  }, [logKpiEvent, orderForm.id, loading])
 
   useEffect(() => {
     if (cartEventFiredRef.current) {
