@@ -4862,9 +4862,9 @@ verror@1.10.0:
   version "0.35.0"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-resources@0.35.0/public/@types/vtex.checkout-resources#16b87bef964348a2fee936a9fafffe753ef8f4e8"
 
-"vtex.checkout-splunk@https://lucas--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.checkout-splunk@0.0.0+build1600439734/public/@types/vtex.checkout-splunk":
-  version "0.0.0"
-  resolved "https://lucas--checkoutio.myvtex.com/_v/private/typings/linked/v1/vtex.checkout-splunk@0.0.0+build1600439734/public/@types/vtex.checkout-splunk#aa36804934c7b7d64f5d6cc39ae7257d0754bb2e"
+"vtex.checkout-splunk@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-splunk@0.1.0/public/@types/vtex.checkout-splunk":
+  version "0.1.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-splunk@0.1.0/public/@types/vtex.checkout-splunk#d5670aa05efa8b7d4ee58750506d7e0ece85b8c8"
 
 "vtex.checkout-summary@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-summary@0.16.0/public/@types/vtex.checkout-summary":
   version "0.16.0"
