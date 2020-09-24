@@ -7,6 +7,7 @@
   "store/cart.emptyState.button": "Elige productos",
   "store/cart.checkout": "Ir a Pagar",
   "store/cart.removeToast": "El producto {name} se ha eliminado del carrito",
+  "store/cart.priceChangedToast": "El precio del producto cambió",
   "admin/editor.cart.label": "Carrito",
   "admin/editor.cart.title": "Título",
   "admin/editor.cart.continueShopping": "Botón seguir comprando",

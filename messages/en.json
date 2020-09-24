@@ -7,6 +7,7 @@
   "store/cart.emptyState.button": "Choose products",
   "store/cart.checkout": "Checkout",
   "store/cart.removeToast": "Product {name} was removed from the cart",
+  "store/cart.priceChangedToast": "The price of the product was changed",
   "admin/editor.cart.label": "Cart",
   "admin/editor.cart.title": "Title",
   "admin/editor.cart.continueShopping": "Continue shopping button",
