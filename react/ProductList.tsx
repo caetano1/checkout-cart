@@ -18,14 +18,18 @@ const messages = defineMessages({
     defaultMessage: '',
     id: 'store/cart.removeToast',
   },
+  priceChangedToast: {
+    defaultMessage: '',
+    id: 'store/cart.priceChangedToast'
+  }
 })
 
 const ProductList: FunctionComponent<InjectedIntlProps> = ({ intl }) => {
   const {
-    orderForm: { items },
+    orderForm: { allowManualPrice, items, userType },
     loading,
   } = useOrderForm()
-  const { updateQuantity, removeItem } = useOrderItems()
+  const { updateQuantity, removeItem, setManualPrice } = useOrderItems()
   const { enqueueToasts } = useCartToastContext()
   const { push } = usePixel()
 
@@ -56,13 +60,26 @@ const ProductList: FunctionComponent<InjectedIntlProps> = ({ intl }) => {
     [removeItem, enqueueToasts, intl, push]
   )
 
+  const handleSetManualPrice = useCallback(
+    (price: number, itemIndex: number) => {
+      setManualPrice(price, itemIndex)
+      enqueueToasts([
+        intl.formatMessage(messages.priceChangedToast)
+      ])
+    },
+    [setManualPrice, enqueueToasts, intl]
+  )
+
   return (
     <ExtensionPoint
       id="product-list"
+      allowManualPrice={allowManualPrice}
       items={items}
       loading={loading}
+      userType={userType}
       onQuantityChange={handleQuantityChange}
       onRemove={handleRemove}
+      onSetManualPrice={handleSetManualPrice}
     />
   )
 }
