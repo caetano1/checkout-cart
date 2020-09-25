@@ -20,8 +20,8 @@ const messages = defineMessages({
   },
   priceChangedToast: {
     defaultMessage: '',
-    id: 'store/cart.priceChangedToast'
-  }
+    id: 'store/cart.priceChangedToast',
+  },
 })
 
 const ProductList: FunctionComponent<InjectedIntlProps> = ({ intl }) => {
@@ -63,9 +63,7 @@ const ProductList: FunctionComponent<InjectedIntlProps> = ({ intl }) => {
   const handleSetManualPrice = useCallback(
     (price: number, itemIndex: number) => {
       setManualPrice(price, itemIndex)
-      enqueueToasts([
-        intl.formatMessage(messages.priceChangedToast)
-      ])
+      enqueueToasts([intl.formatMessage(messages.priceChangedToast)])
     },
     [setManualPrice, enqueueToasts, intl]
   )
