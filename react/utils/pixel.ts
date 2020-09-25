@@ -64,7 +64,7 @@ export function mapCartItemToPixel(item: CartItem): PixelCartItem {
     price: item.sellingPrice ?? 0,
     name: getNameWithoutVariant(item),
     quantity: item.quantity,
-    productId: item.productId,
+    productId: item.productId ?? '',
     productRefId: item.productRefId ?? '',
     brand: item.additionalInfo?.brandName ?? '',
     category: productCategory(item),
