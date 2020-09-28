@@ -2,8 +2,10 @@ import { FunctionComponent, useEffect } from 'react'
 import { useQuery } from 'react-apollo'
 import StoreOrderFormQuery from 'vtex.store-resources/QueryOrderForm'
 import CheckoutOrderFormQuery from 'vtex.checkout-resources/QueryOrderForm'
-import useOrderItems from 'vtex.order-items/OrderItems'
+import { OrderItems } from 'vtex.order-items'
 import { useRuntime } from 'vtex.render-runtime'
+
+const { useOrderItems } = OrderItems
 
 const orderFormOptimizationEnabled =
   window.__RUNTIME__.settings?.['vtex.store']?.enableOrderFormOptimization ??
