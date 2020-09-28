@@ -35,14 +35,14 @@ const CartWrapper: FunctionComponent = () => {
 
   const { logKpiEvent } = useSplunk()
 
-  const prevOrderFormId = useRef<string | null>(null)
+  const previousOrderFormId = useRef<string | null>(null)
 
   useEffect(() => {
-    if (loading || prevOrderFormId.current === orderForm.id) {
+    if (loading || previousOrderFormId.current === orderForm.id) {
       return
     }
 
-    prevOrderFormId.current = orderForm.id
+    previousOrderFormId.current = orderForm.id
 
     logKpiEvent({
       level: 'Important',
