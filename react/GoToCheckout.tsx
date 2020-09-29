@@ -19,9 +19,15 @@ const GoToCheckoutButton: StorefrontFunctionComponent<Props> = ({ label }) => {
 
   const handleGoToCheckout = () => {
     if (major >= 2) {
-      navigate({ page: 'store.checkout.order-form' })
+      navigate({
+        page: 'store.checkout.order-form',
+        fallbackToWindowLocation: false,
+      })
     } else {
-      navigate({ page: '/checkout/#payment', fallbackToWindowLocation: true })
+      navigate({
+        to: `/checkout/#/payment`,
+        fallbackToWindowLocation: true,
+      })
     }
   }
 
