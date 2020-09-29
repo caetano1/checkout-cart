@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Fixed
+- Use navigate when redirecting to the checkout.
+
 ## [0.30.1] - 2020-10-07
 ### Changed
 - Make summary in sidebar sticky to prevent going offscreen on long carts.
