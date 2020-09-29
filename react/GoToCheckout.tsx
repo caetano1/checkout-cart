@@ -25,7 +25,7 @@ const GoToCheckoutButton: StorefrontFunctionComponent<Props> = ({ label }) => {
       })
     } else {
       navigate({
-        to: `/checkout/#/payment`,
+        to: '/checkout/#/payment',
         fallbackToWindowLocation: true,
       })
     }
