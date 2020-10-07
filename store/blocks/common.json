@@ -43,8 +43,8 @@
     "children": ["go-to-checkout"],
     "props": {
       "blockClass": "goToCheckout",
-      "paddingBottom": 4,
-      "paddingTop": 4
+      "paddingTop": 4,
+      "paddingBottom": 4
     }
   }
 }
