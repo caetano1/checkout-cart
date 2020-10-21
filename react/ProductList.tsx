@@ -35,6 +35,10 @@ const ProductList: FunctionComponent<InjectedIntlProps> = ({ intl }) => {
 
   const handleQuantityChange = useCallback(
     (uniqueId: string, quantity: number, item: Item) => {
+      if (quantity === 0) {
+        handleRemove(uniqueId, item)
+        return
+      }
       const adjustedItem = { ...mapCartItemToPixel(item), quantity }
       push({
         event: 'addToCart',

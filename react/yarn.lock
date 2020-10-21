@@ -4854,13 +4854,13 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-"vtex.checkout-graphql@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-graphql@0.40.0/public/@types/vtex.checkout-graphql":
-  version "0.40.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-graphql@0.40.0/public/@types/vtex.checkout-graphql#15b4a7453308e2789bace3524774d3924f4c87e0"
+"vtex.checkout-graphql@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-graphql@0.45.0/public/@types/vtex.checkout-graphql":
+  version "0.45.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-graphql@0.45.0/public/@types/vtex.checkout-graphql#93a92fe3cf000f3767d9f99cc955262ce2004f48"
 
-"vtex.checkout-resources@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-resources@0.35.0/public/@types/vtex.checkout-resources":
-  version "0.35.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-resources@0.35.0/public/@types/vtex.checkout-resources#16b87bef964348a2fee936a9fafffe753ef8f4e8"
+"vtex.checkout-resources@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-resources@0.36.0/public/@types/vtex.checkout-resources":
+  version "0.36.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-resources@0.36.0/public/@types/vtex.checkout-resources#0455799f72963e227673ac17fdebdee9565c7496"
 
 "vtex.checkout-splunk@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.checkout-splunk@0.1.0/public/@types/vtex.checkout-splunk":
   version "0.1.0"
@@ -4886,13 +4886,13 @@ verror@1.10.0:
   version "0.7.1"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-coupon@0.7.1/public/@types/vtex.order-coupon#6c09b44ce5c24dc65fc80a4298d62d3c476c6c52"
 
-"vtex.order-items@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-items@0.8.2/public/@types/vtex.order-items":
-  version "0.8.2"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-items@0.8.2/public/@types/vtex.order-items#bc16fa5100ab74164d4fb62d5e4199254d690d2a"
+"vtex.order-items@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-items@0.9.1/public/@types/vtex.order-items":
+  version "0.9.1"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-items@0.9.1/public/@types/vtex.order-items#ff44c030d858af223ffdfd6608200ed66fc074f8"
 
-"vtex.order-manager@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-manager@0.8.6/public/@types/vtex.order-manager":
-  version "0.8.6"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-manager@0.8.6/public/@types/vtex.order-manager#7439a66d02f5d79fd48ff3b87f6e3c8586259396"
+"vtex.order-manager@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-manager@0.8.7/public/@types/vtex.order-manager":
+  version "0.8.7"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-manager@0.8.7/public/@types/vtex.order-manager#d666dbf9c6d630dba38ac26e815ffaa3811933df"
 
 "vtex.order-shipping@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.order-shipping@0.5.0/public/@types/vtex.order-shipping":
   version "0.5.0"
@@ -4902,13 +4902,13 @@ verror@1.10.0:
   version "1.4.0"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.pixel-manager@1.4.0/public/@types/vtex.pixel-manager#f636047e354d65f4d7691c81e799c6458407bec0"
 
-"vtex.product-list@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.product-list@0.23.3/public/@types/vtex.product-list":
-  version "0.23.3"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.product-list@0.23.3/public/@types/vtex.product-list#5e7f570297c1e6c5aeed7011e5d90c54f9a0713d"
+"vtex.product-list@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.product-list@0.24.3/public/@types/vtex.product-list":
+  version "0.24.3"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.product-list@0.24.3/public/@types/vtex.product-list#98be9e2bec0c88739fc0735f30077cdb3616e67d"
 
-"vtex.render-runtime@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.121.0/public/@types/vtex.render-runtime":
-  version "8.121.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.121.0/public/@types/vtex.render-runtime#2d5cfba8888df1844a808828b87e5331ab5baa59"
+"vtex.render-runtime@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.123.1/public/@types/vtex.render-runtime":
+  version "8.123.1"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.123.1/public/@types/vtex.render-runtime#427325fde9f5dddfb7104e7605364c33e5f5fc6d"
 
 "vtex.shipping-calculator@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.shipping-calculator@0.8.3/public/@types/vtex.shipping-calculator":
   version "0.8.3"
@@ -4918,13 +4918,13 @@ verror@1.10.0:
   version "0.3.4"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.sticky-layout@0.3.4/public/@types/vtex.sticky-layout#5b786d6f9ab0a40e4997c955a75885eee32515ef"
 
-"vtex.store-resources@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.71.0/public/_types/react":
+"vtex.store-resources@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.73.0/public/_types/react":
   version "0.0.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.71.0/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.store-resources@0.73.0/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
 
-"vtex.styleguide@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.129.0/public/@types/vtex.styleguide":
-  version "9.129.0"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.129.0/public/@types/vtex.styleguide#916e6fbd7f14585c9e07e040d41d8966860affba"
+"vtex.styleguide@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.133.0/public/@types/vtex.styleguide":
+  version "9.133.0"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.133.0/public/@types/vtex.styleguide#1afb6bfeceee829a24d18afb672f1f05d64638ac"
 
 w3c-hr-time@^1.0.1:
   version "1.0.1"
