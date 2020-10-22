@@ -33,18 +33,6 @@ const ProductList: FunctionComponent<InjectedIntlProps> = ({ intl }) => {
   const { enqueueToasts } = useCartToastContext()
   const { push } = usePixel()
 
-  const handleQuantityChange = useCallback(
-    (uniqueId: string, quantity: number, item: Item) => {
-      const adjustedItem = { ...mapCartItemToPixel(item), quantity }
-      push({
-        event: 'addToCart',
-        items: [adjustedItem],
-      })
-      updateQuantity({ uniqueId, quantity })
-    },
-    [updateQuantity, push]
-  )
-
   const handleRemove = useCallback(
     (uniqueId: string, item: Item) => {
       const adjustedItem = mapCartItemToPixel(item)
@@ -58,6 +46,22 @@ const ProductList: FunctionComponent<InjectedIntlProps> = ({ intl }) => {
       ])
     },
     [removeItem, enqueueToasts, intl, push]
+  )
+
+  const handleQuantityChange = useCallback(
+    (uniqueId: string, quantity: number, item: Item) => {
+      if (quantity === 0) {
+        handleRemove(uniqueId, item)
+        return
+      }
+      const adjustedItem = { ...mapCartItemToPixel(item), quantity }
+      push({
+        event: 'addToCart',
+        items: [adjustedItem],
+      })
+      updateQuantity({ uniqueId, quantity })
+    },
+    [updateQuantity, push, handleRemove]
   )
 
   const handleSetManualPrice = useCallback(

@@ -73,6 +73,6 @@ export function mapCartItemToPixel(item: CartItem): PixelCartItem {
       ? fixUrlProtocol(item.imageUrls.at3x)
       : item.imageUrl ?? '',
     referenceId: item.refId ?? '',
-    seller: item.seller,
+    seller: item.seller ?? '',
   }
 }
