@@ -42,7 +42,12 @@ const CartTitle: StorefrontFunctionComponent<Props> = ({ title }) => {
           >
             <FormattedMessage
               id="store/cart.items"
-              values={{ itemsQuantity: items.reduce((total, next) => total + next.quantity, 0) }}
+              values={{
+                itemsQuantity: items.reduce(
+                  (total, next) => total + next.quantity,
+                  0
+                ),
+              }}
             />
           </span>
         )}
