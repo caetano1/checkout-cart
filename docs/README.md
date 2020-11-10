@@ -1,19 +1,21 @@
-# VTEX IO Base Component
+# Checkout Cart - WIP
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-This demo component shows you how to make a simple yet complete VTEX IO component.
+```diff
+- ALERT! -
+- This is an ongoing unsupported unfinished undocumented project. We do not guarantee any results after installation. -
+```
 
-It shows a simple demonstration of the following features:
+## Installation
 
-- Declaring a component interface in `store/interfaces.json`.
-- Declaring a schema to receive props via Storefront.
-- Using the `messages` feature to have localized strings.
-- Using an NPM package like `react-intl`
-- Using another VTEX IO App like `vtex.styleguide`.
-- Using CSS Modules to make your component customizable via CSS on a store theme.
-- Using tachyons tokens to quickly style your components.
+TBD
+
+## Dependencies
+
+TBD
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
