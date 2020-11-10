@@ -18,7 +18,39 @@ const messages = defineMessages({
   },
 })
 
-const CartTitle: StorefrontFunctionComponent<Props> = ({ title }) => {
+const countCartItems = (countMode: MinicartTotalItemsType, arr: Item[]) => {
+  if (countMode === 'distinctAvailable') {
+    return arr.reduce((itemQuantity: number, item: Item) => {
+      if (item.availability === 'available') {
+        return itemQuantity + 1
+      }
+      return itemQuantity
+    }, 0)
+  }
+
+  if (countMode === 'totalAvailable') {
+    return arr.reduce((itemQuantity: number, item: Item) => {
+      if (item.availability === 'available') {
+        return itemQuantity + item.quantity
+      }
+      return itemQuantity
+    }, 0)
+  }
+
+  if (countMode === 'total') {
+    return arr.reduce((itemQuantity: number, item: Item) => {
+      return itemQuantity + item.quantity
+    }, 0)
+  }
+
+  // countMode === 'distinct'
+  return arr.length
+}
+
+const CartTitle: StorefrontFunctionComponent<Props> = ({
+  title,
+  itemCountMode = 'distinct',
+}) => {
   const {
     orderForm: { items },
     loading,
@@ -43,10 +75,7 @@ const CartTitle: StorefrontFunctionComponent<Props> = ({ title }) => {
             <FormattedMessage
               id="store/cart.items"
               values={{
-                itemsQuantity: items.reduce(
-                  (total, next) => total + next.quantity,
-                  0
-                ),
+                itemsQuantity: countCartItems(itemCountMode, items),
               }}
             />
           </span>
@@ -58,6 +87,7 @@ const CartTitle: StorefrontFunctionComponent<Props> = ({ title }) => {
 
 interface Props {
   title: string
+  itemCountMode: MinicartTotalItemsType
 }
 
 CartTitle.schema = {

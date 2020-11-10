@@ -16,3 +16,9 @@ interface ToastInterface {
 }
 
 type Toast = ToastInterface | string
+
+type MinicartTotalItemsType =
+  | 'total'
+  | 'distinct'
+  | 'totalAvailable'
+  | 'distinctAvailable'
