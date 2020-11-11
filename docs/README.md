@@ -3,10 +3,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-```diff
-- ALERT! -
-- This is an ongoing unsupported unfinished undocumented project. We do not guarantee any results after installation. -
-```
+⚠️⚠️ **This is an ongoing, unsupported, unfinished and undocumented project. We do not guarantee any results after installation, use it at your own risk.** ⚠️⚠️
 
 ## Installation
 
